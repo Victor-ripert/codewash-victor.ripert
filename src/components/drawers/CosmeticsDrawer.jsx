@@ -67,7 +67,7 @@ const CosmeticsDrawer = ({
                     <h3 className="text-xl text-blue-300 mb-5 font-bold flex items-center gap-3 uppercase tracking-wider">
                         <Sparkles size={20} /> Theme Select
                     </h3>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-3 gap-4">
                         {THEMES_LIST.map(theme => (
                             <button 
                                 key={theme.id} 
