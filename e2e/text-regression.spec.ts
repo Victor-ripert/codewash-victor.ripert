@@ -61,8 +61,10 @@ test('key UI text remains stable', async ({ page }) => {
   const parentToggle = page.getByText('Parent?');
   await parentToggle.click();
   await expect(page.getByText('What is this?')).toBeVisible();
-  await expect(page.getByText('Incorrect answer. Try again!')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
+  // Trigger an invalid submit to surface the error message
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await expect(page.getByText('Incorrect answer. Try again!')).toBeVisible();
   // Close the modal via overlay
   await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
 });
