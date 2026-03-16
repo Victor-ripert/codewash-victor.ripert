@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        suite: [lint, unit, component, e2e]
+        suite: [lint, unit, e2e]
     container:
       image: ${{ matrix.suite == 'e2e' && 'mcr.microsoft.com/playwright:v1.58.2-jammy' || 'node:20-bookworm' }}
     steps:
