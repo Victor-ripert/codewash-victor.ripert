@@ -1,8 +1,13 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Locator, type Page } from '@playwright/test';
 
-const clickIfVisible = async (locator) => {
-  if (await locator.isVisible()) {
-    await locator.click();
+const closeOverlayIfPresent = async (page: Page, overlay: Locator) => {
+  if (await overlay.count() === 0) return;
+  try {
+    await overlay.first().click({ timeout: 1500, trial: true });
+    await overlay.first().click({ timeout: 1500 });
+    return;
+  } catch {
+    await page.keyboard.press('Escape');
   }
 };
 
@@ -30,14 +35,14 @@ test('key UI text remains stable', async ({ page }) => {
   await page.getByRole('button', { name: 'Cancel' }).click();
 
   // Close settings drawer via overlay
-  await clickIfVisible(page.locator('div.fixed.inset-0').first());
+  await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
 
   // Bug report modal (bottom-right button)
   const bugBtn = page.locator('button[style*="bottom: 24px"][style*="right: 24px"]');
   await bugBtn.click();
   await expect(page.getByText('Discovered a bug?')).toBeVisible();
   await expect(page.getByText('Whoa... That sucks...')).toBeVisible();
-  await clickIfVisible(page.locator('div.fixed.inset-0').first());
+  await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
 
   // Menu drawer (top-right button)
   const menuBtn = page.locator('button[style*="right: 24px"][style*="top: 24px"]');
@@ -59,5 +64,5 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('Incorrect answer. Try again!')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
   // Close the modal via overlay
-  await clickIfVisible(page.locator('div.fixed.inset-0').first());
+  await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
 });
