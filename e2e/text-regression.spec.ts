@@ -54,7 +54,7 @@ test('key UI text remains stable', async ({ page }) => {
 
   // Parental verification flow
   // Close the menu drawer via overlay, then reopen the Settings drawer
-  await clickIfVisible(page.locator('div.fixed.inset-0').first());
+  await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
   await settingsBtn.click();
   await expect(page.getByText('Settings')).toBeVisible();
 
