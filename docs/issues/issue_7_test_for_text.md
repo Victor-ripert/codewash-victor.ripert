@@ -19,7 +19,7 @@
 
 ### How to run
 - Local: `npm run test:e2e` (Playwright will build + start preview via `webServer`).
-- CI: already included in the `e2e` matrix job in [.github/workflows/ci.yml](../.github/workflows/ci.yml).
+- CI: already included in the `e2e` matrix job in [.github/workflows/ci.yml](../../.github/workflows/ci.yml).
 
 ### Next steps after i18n
 - If copy changes intentionally (e.g., wording tweaks), update the expected strings in the spec to match the new translations.
