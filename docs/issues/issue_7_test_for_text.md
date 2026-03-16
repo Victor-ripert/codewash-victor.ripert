@@ -10,7 +10,6 @@
 	- Reset modal: “Delete Progress?”, irreversible warning, “Type DELETE to confirm:”, “Cancel”, “Delete”.
 	- Bug report modal: “Discovered a bug?”, “Whoa... That sucks...”.
 	- Menu drawer: “Achievements”, “Total Level:”, “Badges:”, “Achievements:”.
-	- Skill colors: “Pink”, “Cyan”.
 - Uses Playwright `webServer` (build + preview) so the app auto-starts in CI.
 
 ### How it protects the migration
