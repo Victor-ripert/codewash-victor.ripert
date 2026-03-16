@@ -5,7 +5,7 @@
 - We need automated checks that assert key user-facing strings remain unchanged during the i18n rollout.
 
 ### What we added
-- **Playwright text-regression spec**: [e2e/text-regression.spec.ts](../e2e/text-regression.spec.ts) runs in the existing e2e suite and asserts that critical strings still render. It opens drawers/modals via the icon buttons and validates:
+- **Playwright text-regression spec**: [e2e/text-regression.spec.ts](../../e2e/text-regression.spec.ts) runs in the existing e2e suite and asserts that critical strings still render. It opens drawers/modals via the icon buttons and validates:
 	- Settings drawer: “Settings”, “Audio Configuration”, “Music Volume”, “SFX Volume”, “Danger Zone”, “DELETE PROFILE PROGRESS”.
 	- Reset modal: “Delete Progress?”, irreversible warning, “Type DELETE to confirm:”, “Cancel”, “Delete”.
 	- Bug report modal: “Discovered a bug?”, “Whoa... That sucks...”.
