@@ -47,7 +47,7 @@ test('key UI text remains stable', async ({ page }) => {
   // Menu drawer (top-right button)
   const menuBtn = page.locator('button[style*="right: 24px"][style*="top: 24px"]');
   await menuBtn.click();
-  await expect(page.getByText('Achievements')).toBeVisible();
+  await expect(page.getByText('Achievements', { exact: true })).toBeVisible();
   await expect(page.getByText('Total Level:')).toBeVisible();
   await expect(page.getByText('Badges:')).toBeVisible();
   await expect(page.getByText('Achievements:')).toBeVisible();
