@@ -53,6 +53,11 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('Achievements:')).toBeVisible();
 
   // Parental verification flow
+  // Close the menu drawer via overlay, then reopen the Settings drawer
+  await clickIfVisible(page.locator('div.fixed.inset-0').first());
+  await settingsBtn.click();
+  await expect(page.getByText('Settings')).toBeVisible();
+
   // Find the Parent? toggle on the profile card and open the modal
   const parentToggle = page.getByText('Parent?');
   await parentToggle.click();
