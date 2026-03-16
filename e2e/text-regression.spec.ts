@@ -26,7 +26,7 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('This action is irreversible!')).toBeVisible();
   await expect(page.getByText('Type DELETE to confirm:')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Cancel' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Delete' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Delete', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Cancel' }).click();
 
   // Close settings drawer via overlay
