@@ -7,8 +7,13 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.js',
     globals: true,
+    deps: {
+      registerNodeLoader: true,
+    },
+    exclude: ['node_modules', 'dist', 'e2e/**', '.github/**'],
     coverage: {
       provider: 'v8',
+      reporter: ['text', 'lcov'],
     },
   },
 });
