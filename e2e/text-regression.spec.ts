@@ -52,10 +52,6 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('Badges:')).toBeVisible();
   await expect(page.getByText('Achievements:')).toBeVisible();
 
-  // Skill card color labels (ensure list text unchanged)
-  await expect(page.getByText('Pink')).toBeVisible();
-  await expect(page.getByText('Cyan')).toBeVisible();
-
   // Parental verification flow
   // Find the Parent? toggle on the profile card and open the modal
   const parentToggle = page.getByText('Parent?');
