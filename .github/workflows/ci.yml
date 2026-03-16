@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.suite }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [lint, unit, component, e2e]
+    container:
+      image: ${{ matrix.suite == 'e2e' && 'mcr.microsoft.com/playwright:v1.49.0-jammy' || 'node:20-bookworm' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint/unit/component
+        if: matrix.suite != 'e2e'
+        run: npm run test:${{ matrix.suite }}
+
+      - name: Build app
+        if: matrix.suite == 'e2e'
+        run: npm run build
+
+      - name: Start preview server
+        if: matrix.suite == 'e2e'
+        run: npm run preview -- --host 0.0.0.0 --port 4173 > /tmp/preview.log 2>&1 &
+
+      - name: Wait for preview
+        if: matrix.suite == 'e2e'
+        run: npx --yes wait-on http://127.0.0.1:4173
+
+      - name: Run e2e tests
+        if: matrix.suite == 'e2e'
+        env:
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:4173
+        run: npx playwright test --project=chromium
+
+      - name: Upload Playwright report
+        if: matrix.suite == 'e2e' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+          if-no-files-found: ignore
