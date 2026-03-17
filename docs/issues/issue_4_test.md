@@ -38,3 +38,22 @@ Introduce a containerized GitHub Actions pipeline that runs multiple suites (lin
 - New test dependencies and scripts added; sample tests exist and pass locally via `npm run test:lint`, `npm run test:unit`, `npm run test:component`, `npm run test:e2e` (after `npm run build && npm run preview`).
 - `.github/workflows/ci.yml` runs all suites in containers on push/PR; matrix isolates suite responsibilities.
 - CI artifacts (Playwright traces, optional coverage/JUnit) upload on failure for debugging.
+
+
+#### Notes :
+ **Launching the End2End tests**\
+The test using playwright (`npm run test:e2e`) and work with Playwright image (`mcr.microsoft.com/playwright:v1.58.2-jammy`).\
+For texting them locally you need to use the following command with docker :
+```
+docker run --rm -it -v "$PWD":"$PWD" -w "$PWD" mcr.microsoft.com/playwright:v1.58.2-jammy bash
+
+# Inside the container :
+npm ci && npm run test:e2e
+```
+But you can also launch the test using the following commandes :
+```
+# First install the browser for playwright :
+sudo npx playwright install
+
+# Then launch the test :
+sudo npm run test:e2e -- --project=chromium
