@@ -428,6 +428,30 @@ export const WRITING_ITEMS_BY_LENGTH = {
 export const HOMOPHONES = { "SEE": ["SEA", "C"], "TO": ["TWO", "TOO", "2"], "FOR": ["FOUR", "4"], "SUN": ["SON"], "RED": ["READ"], "NO": ["KNOW"], "ARE": ["R", "OUR"], "YOU": ["U", "EWE"], "EYE": ["I"], "BEE": ["BE"], "ONE": ["WON", "1"] };
 export const MOB_KEYS = Object.keys(HOSTILE_MOBS);
 
+// Base skill data structure - uses translation keys instead of hardcoded text
+export const SKILL_DATA_BASE = [
+    { id: 'reading', img: BASE_ASSETS.skillIcons['Reading'], colorStyle: { background: 'linear-gradient(to bottom, #7e22ce, #3730a3)' }, accent: 'text-purple-400', hasChallenge: true, challengeType: 'reading', mobOffset: 0 },
+    { id: 'math', img: BASE_ASSETS.skillIcons['Math'], colorStyle: { background: 'linear-gradient(to bottom, #b91c1c, #9a3412)' }, accent: 'text-red-400', hasChallenge: true, challengeType: 'math', mobOffset: 4 },
+    { id: 'writing', img: BASE_ASSETS.skillIcons['Writing'], colorStyle: { background: 'linear-gradient(to bottom, #0369a1, #1e40af)' }, accent: 'text-cyan-400', hasChallenge: true, challengeType: 'writing', mobOffset: 8 },
+    { id: 'cleaning', img: BASE_ASSETS.skillIcons['Cleaning'], colorStyle: { background: 'linear-gradient(to bottom, #059669, #15803d)' }, accent: 'text-emerald-400', hasChallenge: true, challengeType: 'cleaning', mobOffset: 12 },
+    { id: 'memory', img: BASE_ASSETS.skillIcons['Memory'], colorStyle: { background: 'linear-gradient(to bottom, #db2777, #be123c)' }, accent: 'text-pink-400', hasChallenge: true, challengeType: 'memory', mobOffset: 16 },
+    { id: 'patterns', img: BASE_ASSETS.skillIcons['Patterns'], colorStyle: { background: 'linear-gradient(to bottom, #ea580c, #c2410c)' }, accent: 'text-orange-400', hasChallenge: true, challengeType: 'patterns', mobOffset: 20 },
+];
+
+// Helper function to get translated skill data
+export const getTranslatedSkillData = (t) => {
+    return SKILL_DATA_BASE.map(skill => ({
+        ...skill,
+        name: t(`skills.${skill.id}.name`),
+        class: t(`skills.${skill.id}.name`), // Use name for class too
+        fantasyName: t(`skills.${skill.id}.fantasyName`),
+        actionName: t(`skills.${skill.id}.actionName`),
+        taskDescription: t(`skills.${skill.id}.taskDescription`),
+        boss: t(`skills.${skill.id}.boss`),
+    }));
+};
+
+// For backwards compatibility, export SKILL_DATA with default English values
 export const SKILL_DATA = [
     { id: 'reading', name: 'Reading', class: 'Reading', fantasyName: 'Enchanting Table', actionName: 'Enchant!', taskDescription: "Speak the ancient words to channel enchantments and vanquish your foes!", img: BASE_ASSETS.skillIcons['Reading'], colorStyle: { background: 'linear-gradient(to bottom, #7e22ce, #3730a3)' }, accent: 'text-purple-400', boss: 'Ender Dragon', hasChallenge: true, challengeType: 'reading', mobOffset: 0 },
     { id: 'math', name: 'Math', class: 'Math', fantasyName: 'Redstone', actionName: 'Calculate!', taskDescription: "Power up your redstone circuits to activate traps and outsmart hostile mobs!", img: BASE_ASSETS.skillIcons['Math'], colorStyle: { background: 'linear-gradient(to bottom, #b91c1c, #9a3412)' }, accent: 'text-red-400', boss: 'The Wither', hasChallenge: true, challengeType: 'math', mobOffset: 4 },

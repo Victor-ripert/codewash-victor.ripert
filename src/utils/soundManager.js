@@ -26,58 +26,73 @@ const UI_SOUNDS = {
 };
 
 // Mob name to folder name mapping (handles differences between display names and folder names)
+// Maps mob IDs (lowercase) to their config including folder name and i18n key
 const MOB_FOLDER_MAP = {
     // Hostile mobs
-    'Zombie': 'zombie',
-    'Creeper': 'creeper',
-    'Skeleton': 'skeleton',
-    'Spider': 'spider',
-    'Enderman': 'endermen',
-    'Blaze': 'blaze',
-    'Ghast': 'ghast',
-    'Slime': 'slime',
-    'Phantom': 'phantom',
-    'Piglin': 'piglin',
-    'Hoglin': 'hoglin',
-    'Drowned': 'drowned',
-    'Pillager': 'pillager',
-    'Evoker': 'evoker',
-    'Guardian': 'guardian',
-    'Magma Cube': 'magmacube',
-    'Witch': 'witch',
+    'zombie': { folderName: 'zombie', i18nKey: 'sound.mobNames.zombie' },
+    'creeper': { folderName: 'creeper', i18nKey: 'sound.mobNames.creeper' },
+    'skeleton': { folderName: 'skeleton', i18nKey: 'sound.mobNames.skeleton' },
+    'spider': { folderName: 'spider', i18nKey: 'sound.mobNames.spider' },
+    'endermen': { folderName: 'endermen', i18nKey: 'sound.mobNames.endermen' },
+    'blaze': { folderName: 'blaze', i18nKey: 'sound.mobNames.blaze' },
+    'ghast': { folderName: 'ghast', i18nKey: 'sound.mobNames.ghast' },
+    'slime': { folderName: 'slime', i18nKey: 'sound.mobNames.slime' },
+    'phantom': { folderName: 'phantom', i18nKey: 'sound.mobNames.phantom' },
+    'piglin': { folderName: 'piglin', i18nKey: 'sound.mobNames.piglin' },
+    'hoglin': { folderName: 'hoglin', i18nKey: 'sound.mobNames.hoglin' },
+    'drowned': { folderName: 'drowned', i18nKey: 'sound.mobNames.drowned' },
+    'pillager': { folderName: 'pillager', i18nKey: 'sound.mobNames.pillager' },
+    'evoker': { folderName: 'evoker', i18nKey: 'sound.mobNames.evoker' },
+    'guardian': { folderName: 'guardian', i18nKey: 'sound.mobNames.guardian' },
+    'magmacube': { folderName: 'magmacube', i18nKey: 'sound.mobNames.magmacube' },
+    'witch': { folderName: 'witch', i18nKey: 'sound.mobNames.witch' },
     // Boss mobs
-    'Ender Dragon': 'enderdragon',
-    'Wither': 'wither',
-    'Warden': 'warden',
+    'enderdragon': { folderName: 'enderdragon', i18nKey: 'sound.mobNames.enderdragon' },
+    'wither': { folderName: 'wither', i18nKey: 'sound.mobNames.wither' },
+    'warden': { folderName: 'warden', i18nKey: 'sound.mobNames.warden' },
     // Miniboss mobs
-    'Elder Guardian': 'elderguardian',
-    'Ravager': 'ravager',
-    'Wither Skeleton': 'wither_skeleton',
-    'Creaking': 'creaking',
+    'elderguardian': { folderName: 'elderguardian', i18nKey: 'sound.mobNames.elderguardian' },
+    'ravager': { folderName: 'ravager', i18nKey: 'sound.mobNames.ravager' },
+    'wither_skeleton': { folderName: 'wither_skeleton', i18nKey: 'sound.mobNames.wither_skeleton' },
+    'creaking': { folderName: 'creaking', i18nKey: 'sound.mobNames.creaking' },
     // Friendly mobs
-    'Cat': 'cat',
-    'Chicken': 'chicken',
-    'Cow': 'cow',
-    'Pig': 'pig',
-    'Sheep': 'sheep',
-    'Wolf': 'wolf',
-    'Dolphin': 'dolphin',
-    'Fox': 'fox',
-    'Panda': 'panda',
-    'Parrot': 'parrot',
-    'Horse': 'horse',
-    'Turtle': 'turtle',
-    'Rabbit': 'rabbit',
-    'Bunny': 'rabbit',
-    'Mooshroom': 'mooshroom',
-    'Polar Bear': 'polarbear',
-    'Llama': 'llama',
-    'Bat': 'bat',
-    'Bee': 'bee',
-    'Villager': 'villager',
-    'Iron Golem': 'irongolem',
-    'Wandering Trader': 'wandering_trader',
-    'Strider': 'strider'
+    'cat': { folderName: 'cat', i18nKey: 'sound.mobNames.cat' },
+    'chicken': { folderName: 'chicken', i18nKey: 'sound.mobNames.chicken' },
+    'cow': { folderName: 'cow', i18nKey: 'sound.mobNames.cow' },
+    'pig': { folderName: 'pig', i18nKey: 'sound.mobNames.pig' },
+    'sheep': { folderName: 'sheep', i18nKey: 'sound.mobNames.sheep' },
+    'wolf': { folderName: 'wolf', i18nKey: 'sound.mobNames.wolf' },
+    'dolphin': { folderName: 'dolphin', i18nKey: 'sound.mobNames.dolphin' },
+    'fox': { folderName: 'fox', i18nKey: 'sound.mobNames.fox' },
+    'panda': { folderName: 'panda', i18nKey: 'sound.mobNames.panda' },
+    'parrot': { folderName: 'parrot', i18nKey: 'sound.mobNames.parrot' },
+    'horse': { folderName: 'horse', i18nKey: 'sound.mobNames.horse' },
+    'turtle': { folderName: 'turtle', i18nKey: 'sound.mobNames.turtle' },
+    'rabbit': { folderName: 'rabbit', i18nKey: 'sound.mobNames.rabbit' },
+    'mooshroom': { folderName: 'mooshroom', i18nKey: 'sound.mobNames.mooshroom' },
+    'polarbear': { folderName: 'polarbear', i18nKey: 'sound.mobNames.polarbear' },
+    'llama': { folderName: 'llama', i18nKey: 'sound.mobNames.llama' },
+    'bat': { folderName: 'bat', i18nKey: 'sound.mobNames.bat' },
+    'bee': { folderName: 'bee', i18nKey: 'sound.mobNames.bee' },
+    'villager': { folderName: 'villager', i18nKey: 'sound.mobNames.villager' },
+    'irongolem': { folderName: 'irongolem', i18nKey: 'sound.mobNames.irongolem' },
+    'wandering_trader': { folderName: 'wandering_trader', i18nKey: 'sound.mobNames.wandering_trader' },
+    'strider': { folderName: 'strider', i18nKey: 'sound.mobNames.strider' }
+};
+
+// Legacy display name to ID mapping for backwards compatibility
+const DISPLAY_NAME_TO_ID_MAP = {
+    'Zombie': 'zombie', 'Creeper': 'creeper', 'Skeleton': 'skeleton', 'Spider': 'spider',
+    'Enderman': 'endermen', 'Blaze': 'blaze', 'Ghast': 'ghast', 'Slime': 'slime',
+    'Phantom': 'phantom', 'Piglin': 'piglin', 'Hoglin': 'hoglin', 'Drowned': 'drowned',
+    'Pillager': 'pillager', 'Evoker': 'evoker', 'Guardian': 'guardian', 'Magma Cube': 'magmacube',
+    'Witch': 'witch', 'Ender Dragon': 'enderdragon', 'Wither': 'wither', 'Warden': 'warden',
+    'Elder Guardian': 'elderguardian', 'Ravager': 'ravager', 'Wither Skeleton': 'wither_skeleton',
+    'Creaking': 'creaking', 'Cat': 'cat', 'Chicken': 'chicken', 'Cow': 'cow', 'Pig': 'pig',
+    'Sheep': 'sheep', 'Wolf': 'wolf', 'Dolphin': 'dolphin', 'Fox': 'fox', 'Panda': 'panda',
+    'Parrot': 'parrot', 'Horse': 'horse', 'Turtle': 'turtle', 'Rabbit': 'rabbit', 'Bunny': 'rabbit',
+    'Mooshroom': 'mooshroom', 'Polar Bear': 'polarbear', 'Llama': 'llama', 'Bat': 'bat', 'Bee': 'bee',
+    'Villager': 'villager', 'Iron Golem': 'irongolem', 'Wandering Trader': 'wandering_trader', 'Strider': 'strider'
 };
 
 // Class for managing BGM playback with shuffle
@@ -233,12 +248,39 @@ export const playAchievement = () => playUISound('notification');
 
 /**
  * Get the folder name for a mob
- * @param {string} mobName - Display name of the mob
- * @returns {string|null} - Folder name or null if not found/mapped
+ * Accepts both mob IDs (lowercase) and legacy display names (for backwards compatibility)
+ * @param {string} mobIdentifier - Mob ID or display name
+ * @returns {string|null} - Folder name or null if not found
  */
-const getMobFolder = (mobName) => {
-    // Only use explicit mappings to avoid loading non-existent files
-    return MOB_FOLDER_MAP[mobName] || null;
+const getMobFolder = (mobIdentifier) => {
+    let mobId = mobIdentifier;
+    
+    // Check if it's a display name and convert to ID
+    if (DISPLAY_NAME_TO_ID_MAP[mobIdentifier]) {
+        mobId = DISPLAY_NAME_TO_ID_MAP[mobIdentifier];
+    }
+    
+    // Look up in MOB_FOLDER_MAP
+    const mobConfig = MOB_FOLDER_MAP[mobId];
+    return mobConfig ? mobConfig.folderName : null;
+};
+
+/**
+ * Get the i18n translation key for a mob display name
+ * Accepts both mob IDs (lowercase) and legacy display names
+ * @param {string} mobIdentifier - Mob ID or display name
+ * @returns {string|null} - Translation key or null if not found
+ */
+export const getMobI18nKey = (mobIdentifier) => {
+    let mobId = mobIdentifier;
+    
+    // Check if it's a display name and convert to ID
+    if (DISPLAY_NAME_TO_ID_MAP[mobIdentifier]) {
+        mobId = DISPLAY_NAME_TO_ID_MAP[mobIdentifier];
+    }
+    
+    const mobConfig = MOB_FOLDER_MAP[mobId];
+    return mobConfig ? mobConfig.i18nKey : null;
 };
 
 /**

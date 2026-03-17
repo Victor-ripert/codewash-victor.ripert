@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
     Menu, Sparkles, Gift, Maximize, Minimize, Settings, Bug
 } from 'lucide-react';
@@ -20,7 +21,7 @@ import AchievementToast from './components/ui/AchievementToast';
 import { getRandomMob, getRandomFriendlyMob, getRandomMiniboss, getRandomBoss, getMobForSkill, getEncounterType, generateMathProblem, getReadingWord, getWordForDifficulty, calculateDamage, calculateMobHealth, calculateXPReward, calculateXPToLevel } from './utils/gameUtils';
 import { getRandomAura } from './utils/mobDisplayUtils';
 import { 
-    BASE_ASSETS, THEME_CONFIG, SKILL_DATA, 
+    BASE_ASSETS, THEME_CONFIG, SKILL_DATA, getTranslatedSkillData, 
     HOMOPHONES, DIFFICULTY_CONTENT, HOSTILE_MOBS, BOSS_MOBS, MINIBOSS_MOBS
 } from './constants/gameData';
 import { 
@@ -41,14 +42,20 @@ const PARENT_PRIVILEGE_BADGES = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // Voice recognition constants
 const MIN_SPOKEN_TEXT_LENGTH = 2;
-const MIC_OFF_TEXT = "Mic Off";
 
 // Boss healing animation duration (ms)
 const BOSS_HEALING_ANIMATION_DURATION = 600;
 
 const App = () => {
+    const { t } = useTranslation();
+    const MIC_OFF_TEXT = t('app.micOff');
+    const defaultProfileNames = {
+        1: t('app.player1'),
+        2: t('app.player2'),
+        3: t('app.player3')
+    };
     const [currentProfile, setCurrentProfile] = useState(() => localStorage.getItem('currentProfile_v1') ? parseInt(localStorage.getItem('currentProfile_v1')) : 1);
-    const [profileNames, setProfileNames] = useState(() => localStorage.getItem('heroProfileNames_v1') ? JSON.parse(localStorage.getItem('heroProfileNames_v1')) : { 1: "Player 1", 2: "Player 2", 3: "Player 3" });
+    const [profileNames, setProfileNames] = useState(() => localStorage.getItem('heroProfileNames_v1') ? JSON.parse(localStorage.getItem('heroProfileNames_v1')) : defaultProfileNames);
     const [parentStatus, setParentStatus] = useState(() => localStorage.getItem('heroParentStatus_v1') ? JSON.parse(localStorage.getItem('heroParentStatus_v1')) : { 1: false, 2: false, 3: false });
     const [playerHealth, setPlayerHealth] = useState(10);
     
@@ -974,8 +981,9 @@ const App = () => {
         
         // Update profile name in localStorage directly
         const currentProfileNames = localStorage.getItem('heroProfileNames_v1');
-        const profileNamesObj = currentProfileNames ? JSON.parse(currentProfileNames) : { 1: "Player 1", 2: "Player 2", 3: "Player 3" };
-        profileNamesObj[currentProfile] = `Player ${currentProfile}`;
+        const profileNamesObj = currentProfileNames ? JSON.parse(currentProfileNames) : defaultProfileNames;
+        const playerNumberTranslationKey = `app.player${currentProfile}`;
+        profileNamesObj[currentProfile] = t(playerNumberTranslationKey);
         localStorage.setItem('heroProfileNames_v1', JSON.stringify(profileNamesObj));
         
         window.location.reload();
@@ -1128,12 +1136,13 @@ const App = () => {
     
     const getVisibleItems = () => {
         const items = [];
+        const translatedSkillData = getTranslatedSkillData(t);
         // Generate 7 items: 5 visible cards (offsets -2 to +2) + 2 hidden positions (±3) for smooth entry/exit animation
         for (let i = -3; i <= 3; i++) {
             let idx = selectedIndex + i;
-            let dataIndex = idx % SKILL_DATA.length;
-            if (dataIndex < 0) dataIndex += SKILL_DATA.length;
-            items.push({ ...SKILL_DATA[dataIndex], offset: i, key: idx });
+            let dataIndex = idx % translatedSkillData.length;
+            if (dataIndex < 0) dataIndex += translatedSkillData.length;
+            items.push({ ...translatedSkillData[dataIndex], offset: i, key: idx });
         }
         return items;
     };
