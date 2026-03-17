@@ -1,0 +1,228 @@
+{
+  "app": {
+    "micOff": "Micrófono Apagado",
+    "player1": "Jugador 1",
+    "player2": "Jugador 2",
+    "player3": "Jugador 3"
+  },
+  "menus": {
+    "achievements": "Logros",
+    "totalLevel": "Nivel Total:",
+    "badges": "Insignias:",
+    "achievementsLabel": "Logros:",
+    "skillBadgesSection": "Sección de Insignias de Habilidad",
+    "compactBadgeRow": "Fila de Insignia Compacta",
+    "specialAchievements": "Logros Especiales",
+    "legendary": "¡LEGENDARIO!",
+    "lvlPrefix": "Niv",
+    "lvl180Plus": "Niv 180+"
+  },
+  "settings": {
+    "title": "Opciones",
+    "selectFile": "Seleccionar Archivo",
+    "audioConfiguration": "Configuración de Audio",
+    "musicVolume": "Volumen de Música",
+    "sfxVolume": "Volumen de Efectos",
+    "percent": "%",
+    "dangerZone": "Zona de Peligro",
+    "deleteProgress": "ELIMINAR PROGRESO DEL PERFIL"
+  },
+  "modals": {
+    "reset": {
+      "title": "¿Eliminar Progreso?",
+      "message": "¿Estás seguro de que quieres eliminar todo el progreso de este perfil?",
+      "warning": "¡Esta acción es irreversible!",
+      "instructionPrefix": "Escribe",
+      "instructionSuffix": "para confirmar:",
+      "error": "Por favor escribe DELETE para confirmar.",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
+    },
+    "bugReport": {
+      "title": "¿Descubriste un bug?",
+      "sympathy": "Uf... Eso es malo..."
+    },
+    "parentalVerification": {
+      "title": "¿Qué es esto?",
+      "submitButton": "Enviar",
+      "errorMessage": "¡Respuesta incorrecta. ¡Intenta de nuevo!"
+    }
+  },
+  "profile": {
+    "parent": "Padre",
+    "parentLabel": "¿Padre?",
+    "prefix": "P",
+    "lvAbbrev": "NIV.",
+    "skillProficiency": "Dominio de Habilidades"
+  },
+  "skills": {
+    "colors": {
+      "pink": "Rosa",
+      "cyan": "Cian",
+      "gold": "Oro",
+      "brown": "Marrón",
+      "blue": "Azul",
+      "red": "Rojo",
+      "green": "Verde",
+      "black": "Negro"
+    },
+    "reading": {
+      "name": "Lectura",
+      "fantasyName": "Mesa de Encantamientos",
+      "actionName": "¡Encantar!",
+      "taskDescription": "¡Pronuncia palabras antiguas para canalizar encantamientos y vencer a tus enemigos!",
+      "boss": "Dragón del End"
+    },
+    "math": {
+      "name": "Matemáticas",
+      "fantasyName": "Redstone",
+      "actionName": "¡Calcular!",
+      "taskDescription": "¡Activa tus circuitos de redstone para disparar trampas y burlar a los mobs hostiles!",
+      "boss": "El Wither"
+    },
+    "writing": {
+      "name": "Escritura",
+      "fantasyName": "Mesa de Trabajo",
+      "actionName": "¡Crear!",
+      "taskDescription": "¡Deletrea la receta para forjar armas y armaduras legendarias!",
+      "boss": "El Guardián"
+    },
+    "cleaning": {
+      "name": "Limpieza",
+      "fantasyName": "Gestión de Cofres",
+      "actionName": "¡Organizar!",
+      "taskDescription": "¡Organiza tu botín y prepara tu inventario para las aventuras que vienen!",
+      "boss": "Cofre del End"
+    },
+    "memory": {
+      "name": "Memoria",
+      "fantasyName": "Emparejar y Eclosionar",
+      "actionName": "¡Emparejar!",
+      "taskDescription": "¡Encuentra los pares que coinciden para eclosionar criaturas raras en tu granja!",
+      "boss": "Mascota Ajolote"
+    },
+    "patterns": {
+      "name": "Patrones",
+      "fantasyName": "Construcción de Lógica",
+      "actionName": "¡Resolver!",
+      "taskDescription": "¡Descifra la secuencia para desbloquear mecanismos antiguos y tesoros ocultos!",
+      "boss": "Golem de Hierro"
+    }
+  },
+  "effects": {
+    "border": {
+      "solid": {
+        "name": "Predeterminado",
+        "description": "Resplandor dorado eterno"
+      },
+      "solidPicker": {
+        "name": "Predeterminado",
+        "description": "Brillo eterno personalizable"
+      },
+      "gradient": {
+        "name": "Cobre",
+        "description": "Rotación arcana hipnotizadora"
+      },
+      "sparkle": {
+        "name": "Nublado",
+        "description": "Brillo de polvo estelar celestial"
+      },
+      "electric": {
+        "name": "Pararrayos",
+        "description": "Descarga de plasma ensordecedor"
+      },
+      "lifestream": {
+        "name": "Corriente de Vida",
+        "description": "Energía etérea fluida"
+      },
+      "frost": {
+        "name": "Escarcha",
+        "description": "Majestad de cristalez glacial"
+      },
+      "fire": {
+        "name": "Lava",
+        "description": "Furia infernal ardiente"
+      },
+      "shadow": {
+        "name": "Portal del Nether",
+        "description": "Susurros del vacío abismal"
+      },
+      "rainbow": {
+        "name": "¡Legendario!",
+        "description": "Aura legendaria prismática"
+      }
+    },
+    "achievement": {
+      "livewire": {
+        "name": "Alambre Vivo",
+        "description": "Arcos eléctricos volátiles"
+      },
+      "void": {
+        "name": "Vacío Cósmico",
+        "description": "Expansión iluminada por estrellas infinita"
+      },
+      "toxic": {
+        "name": "Toxina",
+        "description": "Goteo de ácido cáustico"
+      },
+      "holo": {
+        "name": "Holograma",
+        "description": "Fallo de realidad digital"
+      },
+      "crystal": {
+        "name": "Cristalino",
+        "description": "Conjunto de fragmentos prismáticos"
+      }
+    }
+  },
+  "sound": {
+    "mobNames": {
+      "zombie": "Zombi",
+      "creeper": "Creeper",
+      "skeleton": "Esqueleto",
+      "spider": "Araña",
+      "endermen": "Enderman",
+      "blaze": "Blaze",
+      "ghast": "Ghast",
+      "slime": "Slime",
+      "phantom": "Fantasma",
+      "piglin": "Piglin",
+      "hoglin": "Hoglin",
+      "drowned": "Ahogado",
+      "pillager": "Saqueador",
+      "evoker": "Hechicero",
+      "guardian": "Guardián",
+      "magmacube": "Cubo de Magma",
+      "witch": "Bruja",
+      "enderdragon": "Dragón del End",
+      "wither": "Wither",
+      "warden": "Guardián",
+      "elderguardian": "Guardián Anciano",
+      "ravager": "Devastador",
+      "wither_skeleton": "Esqueleto Wither",
+      "creaking": "Crujidor",
+      "cat": "Gato",
+      "chicken": "Pollo",
+      "cow": "Vaca",
+      "pig": "Cerdo",
+      "sheep": "Oveja",
+      "wolf": "Lobo",
+      "dolphin": "Delfín",
+      "fox": "Zorro",
+      "panda": "Panda",
+      "parrot": "Loro",
+      "horse": "Caballo",
+      "turtle": "Tortuga",
+      "rabbit": "Conejo",
+      "mooshroom": "Seta de Vaca",
+      "polarbear": "Oso Polar",
+      "llama": "Llama",
+      "bat": "Murciélago",
+      "bee": "Abeja",
+      "villager": "Aldeano",
+      "irongolem": "Golem de Hierro",
+      "wandering_trader": "Comerciante Errante",
+      "strider": "Andador"
+    }
+  }
+}

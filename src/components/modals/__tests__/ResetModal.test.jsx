@@ -1,14 +1,18 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../../../i18n/index.js';
 import ResetModal from '../ResetModal.jsx';
 
 const renderModal = (props = {}) => {
   return render(
-    <ResetModal
-      isOpen
-      onClose={props.onClose || vi.fn()}
-      onConfirm={props.onConfirm || vi.fn()}
-    />
+    <I18nextProvider i18n={i18n}>
+      <ResetModal
+        isOpen
+        onClose={props.onClose || vi.fn()}
+        onConfirm={props.onConfirm || vi.fn()}
+      />
+    </I18nextProvider>
   );
 };
 
@@ -24,7 +28,7 @@ describe('ResetModal', () => {
     fireEvent.change(input, { target: { value: 'WRONG' } });
     fireEvent.submit(submit);
     expect(onConfirm).not.toHaveBeenCalled();
-    expect(screen.getByText(/please type delete/i)).toBeInTheDocument();
+    expect(screen.getByText(/Please type DELETE to confirm/i)).toBeInTheDocument();
   });
 
   it('calls onConfirm when DELETE is typed', () => {

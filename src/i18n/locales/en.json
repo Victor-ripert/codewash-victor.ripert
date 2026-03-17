@@ -1,0 +1,228 @@
+{
+  "app": {
+    "micOff": "Mic Off",
+    "player1": "Player 1",
+    "player2": "Player 2",
+    "player3": "Player 3"
+  },
+  "menus": {
+    "achievements": "Achievements",
+    "totalLevel": "Total Level:",
+    "badges": "Badges:",
+    "achievementsLabel": "Achievements:",
+    "skillBadgesSection": "Skill Badges Section",
+    "compactBadgeRow": "Compact Badge Row",
+    "specialAchievements": "Special Achievements",
+    "legendary": "LEGENDARY!",
+    "lvlPrefix": "Lvl",
+    "lvl180Plus": "Lvl 180+"
+  },
+  "settings": {
+    "title": "Settings",
+    "selectFile": "Select File",
+    "audioConfiguration": "Audio Configuration",
+    "musicVolume": "Music Volume",
+    "sfxVolume": "SFX Volume",
+    "percent": "%",
+    "dangerZone": "Danger Zone",
+    "deleteProgress": "DELETE PROFILE PROGRESS"
+  },
+  "modals": {
+    "reset": {
+      "title": "Delete Progress?",
+      "message": "Are you sure you want to delete all progress for this profile?",
+      "warning": "This action is irreversible!",
+      "instructionPrefix": "Type",
+      "instructionSuffix": "to confirm:",
+      "error": "Please type DELETE to confirm.",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "bugReport": {
+      "title": "Discovered a bug?",
+      "sympathy": "Whoa... That sucks..."
+    },
+    "parentalVerification": {
+      "title": "What is this?",
+      "submitButton": "Submit",
+      "errorMessage": "Incorrect answer. Try again!"
+    }
+  },
+  "profile": {
+    "parent": "Parent",
+    "parentLabel": "Parent?",
+    "prefix": "P",
+    "lvAbbrev": "LV.",
+    "skillProficiency": "Skill Proficiency"
+  },
+  "skills": {
+    "colors": {
+      "pink": "Pink",
+      "cyan": "Cyan",
+      "gold": "Gold",
+      "brown": "Brown",
+      "blue": "Blue",
+      "red": "Red",
+      "green": "Green",
+      "black": "Black"
+    },
+    "reading": {
+      "name": "Reading",
+      "fantasyName": "Enchanting Table",
+      "actionName": "Enchant!",
+      "taskDescription": "Speak the ancient words to channel enchantments and vanquish your foes!",
+      "boss": "Ender Dragon"
+    },
+    "math": {
+      "name": "Math",
+      "fantasyName": "Redstone",
+      "actionName": "Calculate!",
+      "taskDescription": "Power up your redstone circuits to activate traps and outsmart hostile mobs!",
+      "boss": "The Wither"
+    },
+    "writing": {
+      "name": "Writing",
+      "fantasyName": "Crafting Table",
+      "actionName": "Craft!",
+      "taskDescription": "Spell out the recipe to forge legendary weapons and armor!",
+      "boss": "The Warden"
+    },
+    "cleaning": {
+      "name": "Cleaning",
+      "fantasyName": "Chest Management",
+      "actionName": "Organize!",
+      "taskDescription": "Sort your loot and prepare your inventory for the adventures ahead!",
+      "boss": "Ender Chest"
+    },
+    "memory": {
+      "name": "Memory",
+      "fantasyName": "Match n' Hatch",
+      "actionName": "Match!",
+      "taskDescription": "Find the matching pairs to hatch rare creatures for your farm!",
+      "boss": "Axolotl Mascot"
+    },
+    "patterns": {
+      "name": "Patterns",
+      "fantasyName": "Logic Building",
+      "actionName": "Solve!",
+      "taskDescription": "Decipher the sequence to unlock ancient mechanisms and hidden treasures!",
+      "boss": "Iron Golem"
+    }
+  },
+  "effects": {
+    "border": {
+      "solid": {
+        "name": "Default",
+        "description": "Eternal golden radiance"
+      },
+      "solidPicker": {
+        "name": "Default",
+        "description": "Customizable eternal glow"
+      },
+      "gradient": {
+        "name": "Copper",
+        "description": "Mesmerizing arcane rotation"
+      },
+      "sparkle": {
+        "name": "Cloudy",
+        "description": "Celestial stardust shimmer"
+      },
+      "electric": {
+        "name": "Lightning Rod",
+        "description": "Thunderous plasma surge"
+      },
+      "lifestream": {
+        "name": "Lifestream",
+        "description": "Flowing ethereal energy"
+      },
+      "frost": {
+        "name": "Frost",
+        "description": "Glacial crystal majesty"
+      },
+      "fire": {
+        "name": "Lava",
+        "description": "Infernal blazing fury"
+      },
+      "shadow": {
+        "name": "Nether Portal",
+        "description": "Abyssal void whispers"
+      },
+      "rainbow": {
+        "name": "Legendary!",
+        "description": "Prismatic legendary aura"
+      }
+    },
+    "achievement": {
+      "livewire": {
+        "name": "Live Wire",
+        "description": "Volatile electric arcs"
+      },
+      "void": {
+        "name": "Cosmic Void",
+        "description": "Infinite starlit expanse"
+      },
+      "toxic": {
+        "name": "Toxin",
+        "description": "Caustic acid drip"
+      },
+      "holo": {
+        "name": "Hologram",
+        "description": "Digital reality glitch"
+      },
+      "crystal": {
+        "name": "Crystalline",
+        "description": "Prismatic shard array"
+      }
+    }
+  },
+  "sound": {
+    "mobNames": {
+      "zombie": "Zombie",
+      "creeper": "Creeper",
+      "skeleton": "Skeleton",
+      "spider": "Spider",
+      "endermen": "Enderman",
+      "blaze": "Blaze",
+      "ghast": "Ghast",
+      "slime": "Slime",
+      "phantom": "Phantom",
+      "piglin": "Piglin",
+      "hoglin": "Hoglin",
+      "drowned": "Drowned",
+      "pillager": "Pillager",
+      "evoker": "Evoker",
+      "guardian": "Guardian",
+      "magmacube": "Magma Cube",
+      "witch": "Witch",
+      "enderdragon": "Ender Dragon",
+      "wither": "Wither",
+      "warden": "Warden",
+      "elderguardian": "Elder Guardian",
+      "ravager": "Ravager",
+      "wither_skeleton": "Wither Skeleton",
+      "creaking": "Creaking",
+      "cat": "Cat",
+      "chicken": "Chicken",
+      "cow": "Cow",
+      "pig": "Pig",
+      "sheep": "Sheep",
+      "wolf": "Wolf",
+      "dolphin": "Dolphin",
+      "fox": "Fox",
+      "panda": "Panda",
+      "parrot": "Parrot",
+      "horse": "Horse",
+      "turtle": "Turtle",
+      "rabbit": "Rabbit",
+      "mooshroom": "Mooshroom",
+      "polarbear": "Polar Bear",
+      "llama": "Llama",
+      "bat": "Bat",
+      "bee": "Bee",
+      "villager": "Villager",
+      "irongolem": "Iron Golem",
+      "wandering_trader": "Wandering Trader",
+      "strider": "Strider"
+    }
+  }
+}
