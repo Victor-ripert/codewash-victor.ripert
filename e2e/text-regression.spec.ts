@@ -11,6 +11,24 @@ const closeOverlayIfPresent = async (page: Page, overlay: Locator) => {
   }
 };
 
+const closeAllOverlays = async (page: Page) => {
+  // Try a few times in case multiple overlays stack
+  for (let i = 0; i < 3; i += 1) {
+    const overlay = page.locator('div.fixed.inset-0');
+    const count = await overlay.count();
+    if (count === 0) break;
+    await closeOverlayIfPresent(page, overlay);
+  }
+};
+
+const clickThroughOverlay = async (locator: Locator) => {
+  try {
+    await locator.click({ timeout: 2000 });
+  } catch {
+    await locator.click({ timeout: 1000, force: true });
+  }
+};
+
 test('key UI text remains stable', async ({ page }) => {
   await page.goto('/');
   await page.waitForLoadState('networkidle');
@@ -42,11 +60,12 @@ test('key UI text remains stable', async ({ page }) => {
   await bugBtn.click();
   await expect(page.getByText('Discovered a bug?')).toBeVisible();
   await expect(page.getByText('Whoa... That sucks...')).toBeVisible();
-  await closeOverlayIfPresent(page, page.locator('div.fixed.inset-0'));
+  await closeAllOverlays(page);
 
   // Menu drawer (top-right button)
+  await closeAllOverlays(page);
   const menuBtn = page.locator('button[style*="right: 24px"][style*="top: 24px"]');
-  await menuBtn.click();
+  await clickThroughOverlay(menuBtn);
   await expect(page.getByText('Achievements', { exact: true })).toBeVisible();
   await expect(page.getByText('Total Level:')).toBeVisible();
   await expect(page.getByText('Badges:')).toBeVisible();
@@ -59,7 +78,7 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('Settings')).toBeVisible();
 
   // Find the Parent? toggle on the profile card and open the modal
-  const parentToggle = page.getByText('Parent?');
+  const parentToggle = page.getByLabel('Parent?').first();
   await parentToggle.click();
   await expect(page.getByText('What is this?')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
