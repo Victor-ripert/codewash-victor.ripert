@@ -40,7 +40,25 @@ test('key UI text remains stable', async ({ page }) => {
   await expect(page.getByText('Audio Configuration')).toBeVisible();
   await expect(page.getByText('Music Volume')).toBeVisible();
   await expect(page.getByText('SFX Volume')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Language' })).toBeVisible();
   await expect(page.getByText('Danger Zone')).toBeVisible();
+
+  // Language switching from settings only + persistence on reload
+  await page.getByRole('button', { name: 'Spanish' }).click();
+  await expect(page.getByText('Opciones')).toBeVisible();
+  await expect(page.getByText('Configuración de Audio')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Idioma' })).toBeVisible();
+
+  await page.reload();
+  await page.waitForLoadState('networkidle');
+  await settingsBtn.click();
+  await expect(page.getByText('Opciones')).toBeVisible();
+  await expect(page.getByText('Configuración de Audio')).toBeVisible();
+
+  // Restore EN to keep this spec deterministic for following assertions
+  await page.getByRole('button', { name: 'Inglés' }).click();
+  await expect(page.getByText('Settings')).toBeVisible();
+
   const dangerButton = page.getByText('DELETE PROFILE PROGRESS');
   await dangerButton.click();
 

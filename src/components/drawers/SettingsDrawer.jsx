@@ -1,10 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Users, Music, Trash2, AlertTriangle } from 'lucide-react';
+import { Users, Music, Trash2, AlertTriangle, Languages } from 'lucide-react';
 import ProfileCard from '../profile/ProfileCard';
+import { LOCALE_OPTIONS } from '../../constants/locales';
 
 const SettingsDrawer = ({ isOpen, onReset, bgmVol, setBgmVol, sfxVol, setSfxVol, currentProfile, onSwitchProfile, profileNames, onRenameProfile, getProfileStats, parentStatus, onParentVerified, currentSkills }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const activeLanguage = (i18n.resolvedLanguage || i18n.language || 'en').split('-')[0];
+
+    const handleLanguageChange = (languageCode) => {
+        if (languageCode !== activeLanguage) {
+            i18n.changeLanguage(languageCode);
+        }
+    };
     
     return (
     <div 
@@ -49,6 +57,33 @@ const SettingsDrawer = ({ isOpen, onReset, bgmVol, setBgmVol, sfxVol, setSfxVol,
                             <div className="px-3">
                                 <div className="flex justify-between mb-1 text-slate-400 font-bold text-sm uppercase"><span className="pl-2">{t('settings.sfxVolume')}</span><span className="text-yellow-400">{Math.round(sfxVol * 100)}{t('settings.percent')}</span></div>
                                 <input type="range" min="0" max="1" step="0.05" value={sfxVol} onChange={(e) => setSfxVol(parseFloat(e.target.value))} className="h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-yellow-400" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-xl text-blue-300 mb-3 font-bold flex items-center gap-3 uppercase tracking-wider"><Languages size={20} /> {t('settings.language')}</h3>
+                        <div className="bg-slate-900/50 p-5 rounded-xl border-2 border-slate-600">
+                            <p className="text-slate-400 font-bold text-sm uppercase mb-4">{t('settings.languageDescription')}</p>
+                            <div className="grid grid-cols-2 gap-3">
+                                {LOCALE_OPTIONS.map((option) => {
+                                    const isActive = activeLanguage === option.code;
+
+                                    return (
+                                        <button
+                                            key={option.code}
+                                            type="button"
+                                            onClick={() => handleLanguageChange(option.code)}
+                                            aria-pressed={isActive}
+                                            className={`rounded-lg border px-4 py-2 font-bold transition-all ${isActive
+                                                ? 'border-yellow-400 bg-yellow-500/20 text-yellow-300'
+                                                : 'border-slate-500 bg-slate-800/70 text-slate-200 hover:border-slate-300 hover:bg-slate-700/90'
+                                            }`}
+                                        >
+                                            {t(option.labelKey)}
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
