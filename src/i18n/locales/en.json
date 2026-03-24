@@ -23,6 +23,12 @@
     "audioConfiguration": "Audio Configuration",
     "musicVolume": "Music Volume",
     "sfxVolume": "SFX Volume",
+    "language": "Language",
+    "languageDescription": "Choose the interface language",
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    },
     "percent": "%",
     "dangerZone": "Danger Zone",
     "deleteProgress": "DELETE PROFILE PROGRESS"

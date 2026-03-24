@@ -44,10 +44,25 @@
 4. Run existing smoke tests and add at least one UI test asserting language switch updates a known label (for example `settings.title` or `menus.achievements`).
 
 ## 8. Open Questions
-1. Should language switching be available only in settings, or also as a quick-access button in the main screen?
-2. Do we want only `en`/`es` now, or should the UI component be built as extensible for future locales?
+1. Resolved: language switching is available only in settings.
+2. Resolved: implementation is extensible for future locales (data-driven locale options).
 
 ## 9. Recommendation
 - Preferred fix: Option 1 (language button group in `SettingsDrawer`) and defer quick-access toggle until a proven need appears.
 - Why: low implementation complexity, clear discoverability, and alignment with user preference controls.
 - Follow-up tasks: add translation keys for language labels; implement `changeLanguage` handler; add one regression test for runtime switch + persistence.
+
+## 10. Implementation Results
+- Completed: settings-only language selector in `src/components/drawers/SettingsDrawer.jsx`.
+- Completed: data-driven locale options in `src/constants/locales.js` for future locale expansion.
+- Completed: new locale keys for language section and labels in `src/i18n/locales/en.json` and `src/i18n/locales/es.json`.
+- Completed: unit regression in `src/components/drawers/__tests__/SettingsDrawer.test.jsx`.
+- Completed: e2e regression and persistence checks in `e2e/text-regression.spec.ts`.
+
+## 11. Validation Evidence
+1. Unit test passed: `npm run test:unit -- src/components/drawers/__tests__/SettingsDrawer.test.jsx`.
+2. E2E test passed: `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4173 npm run test:e2e -- --output=/tmp/codewash-playwright-output e2e/text-regression.spec.ts`.
+3. Runtime behavior verified in tests:
+- Language can be changed from settings.
+- Visible UI text updates immediately after switching.
+- Language persists after page reload via i18next localStorage detection.

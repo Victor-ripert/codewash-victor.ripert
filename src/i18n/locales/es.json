@@ -23,6 +23,12 @@
     "audioConfiguration": "Configuración de Audio",
     "musicVolume": "Volumen de Música",
     "sfxVolume": "Volumen de Efectos",
+    "language": "Idioma",
+    "languageDescription": "Elige el idioma de la interfaz",
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
+    },
     "percent": "%",
     "dangerZone": "Zona de Peligro",
     "deleteProgress": "ELIMINAR PROGRESO DEL PERFIL"
