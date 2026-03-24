@@ -26,8 +26,10 @@
     "language": "Idioma",
     "languageDescription": "Elige el idioma de la interfaz",
     "languages": {
-      "en": "Inglés",
-      "es": "Español"
+      "en": "English",
+      "es": "Espanol",
+      "fr": "Francais",
+      "eo": "Esperanto"
     },
     "percent": "%",
     "dangerZone": "Zona de Peligro",
