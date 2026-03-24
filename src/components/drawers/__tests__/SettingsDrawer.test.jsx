@@ -42,20 +42,34 @@ describe('SettingsDrawer language switch', () => {
     await i18n.changeLanguage('en');
   });
 
-  it('switches settings text between English and Spanish', async () => {
+  it('switches settings text between English, French, Esperanto, and Spanish', async () => {
     renderDrawer();
 
     expect(screen.getByRole('heading', { name: /settings/i })).toBeInTheDocument();
     expect(screen.getByText('Audio Configuration')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Spanish' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Francais' }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: /parametres/i })).toBeInTheDocument();
+    });
+    expect(screen.getByText('Configuration audio')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Esperanto' }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: /agordoj/i })).toBeInTheDocument();
+    });
+    expect(screen.getByText('Sono-agordo')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Espanol' }));
 
     await waitFor(() => {
       expect(screen.getByRole('heading', { name: /opciones/i })).toBeInTheDocument();
     });
     expect(screen.getByText('Configuración de Audio')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Inglés' }));
+    fireEvent.click(screen.getByRole('button', { name: 'English' }));
 
     await waitFor(() => {
       expect(screen.getByRole('heading', { name: /settings/i })).toBeInTheDocument();

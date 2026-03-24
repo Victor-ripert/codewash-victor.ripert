@@ -1,0 +1,236 @@
+{
+  "app": {
+    "micOff": "Micro coupe",
+    "player1": "Joueur 1",
+    "player2": "Joueur 2",
+    "player3": "Joueur 3"
+  },
+  "menus": {
+    "achievements": "Succes",
+    "totalLevel": "Niveau total:",
+    "badges": "Badges:",
+    "achievementsLabel": "Succes:",
+    "skillBadgesSection": "Section des badges de competences",
+    "compactBadgeRow": "Rangee de badge compacte",
+    "specialAchievements": "Succes speciaux",
+    "legendary": "LEGENDAIRE!",
+    "lvlPrefix": "Niv",
+    "lvl180Plus": "Niv 180+"
+  },
+  "settings": {
+    "title": "Parametres",
+    "selectFile": "Selectionner un profil",
+    "audioConfiguration": "Configuration audio",
+    "musicVolume": "Volume musique",
+    "sfxVolume": "Volume effets",
+    "language": "Langue",
+    "languageDescription": "Choisir la langue de l'interface",
+    "languages": {
+      "en": "English",
+      "es": "Espanol",
+      "fr": "Francais",
+      "eo": "Esperanto"
+    },
+    "percent": "%",
+    "dangerZone": "Zone de danger",
+    "deleteProgress": "SUPPRIMER LA PROGRESSION DU PROFIL"
+  },
+  "modals": {
+    "reset": {
+      "title": "Supprimer la progression ?",
+      "message": "Voulez-vous vraiment supprimer toute la progression de ce profil ?",
+      "warning": "Cette action est irreversible !",
+      "instructionPrefix": "Tapez",
+      "instructionSuffix": "pour confirmer :",
+      "error": "Veuillez taper DELETE pour confirmer.",
+      "cancel": "Annuler",
+      "delete": "Supprimer"
+    },
+    "bugReport": {
+      "title": "Vous avez trouve un bug ?",
+      "sympathy": "Oups... C'est embetant..."
+    },
+    "parentalVerification": {
+      "title": "Qu'est-ce que c'est ?",
+      "submitButton": "Valider",
+      "errorMessage": "Reponse incorrecte. Reessayez !"
+    }
+  },
+  "profile": {
+    "parent": "Parent",
+    "parentLabel": "Parent ?",
+    "prefix": "P",
+    "lvAbbrev": "NIV.",
+    "skillProficiency": "Maitrise des competences"
+  },
+  "skills": {
+    "colors": {
+      "pink": "Rose",
+      "cyan": "Cyan",
+      "gold": "Or",
+      "brown": "Marron",
+      "blue": "Bleu",
+      "red": "Rouge",
+      "green": "Vert",
+      "black": "Noir"
+    },
+    "reading": {
+      "name": "Lecture",
+      "fantasyName": "Table d'enchantement",
+      "actionName": "Enchanter!",
+      "taskDescription": "Prononcez les mots anciens pour canaliser les enchantements et vaincre vos ennemis !",
+      "boss": "Dragon de l'End"
+    },
+    "math": {
+      "name": "Maths",
+      "fantasyName": "Redstone",
+      "actionName": "Calculer!",
+      "taskDescription": "Activez vos circuits de redstone pour declencher des pieges et tromper les mobs hostiles !",
+      "boss": "Le Wither"
+    },
+    "writing": {
+      "name": "Ecriture",
+      "fantasyName": "Table de craft",
+      "actionName": "Crafter!",
+      "taskDescription": "Epelez la recette pour forger des armes et armures legendaires !",
+      "boss": "Le Warden"
+    },
+    "cleaning": {
+      "name": "Nettoyage",
+      "fantasyName": "Gestion des coffres",
+      "actionName": "Organiser!",
+      "taskDescription": "Triez votre butin et preparez votre inventaire pour les prochaines aventures !",
+      "boss": "Coffre de l'End"
+    },
+    "memory": {
+      "name": "Memoire",
+      "fantasyName": "Associer et eclore",
+      "actionName": "Associer!",
+      "taskDescription": "Trouvez les paires correspondantes pour faire eclore des creatures rares dans votre ferme !",
+      "boss": "Mascotte axolotl"
+    },
+    "patterns": {
+      "name": "Sequences",
+      "fantasyName": "Construction logique",
+      "actionName": "Resoudre!",
+      "taskDescription": "Dechiffrez la sequence pour debloquer des mecanismes anciens et des tresors caches !",
+      "boss": "Golem de fer"
+    }
+  },
+  "effects": {
+    "border": {
+      "solid": {
+        "name": "Defaut",
+        "description": "Rayonnement dore eternel"
+      },
+      "solidPicker": {
+        "name": "Defaut",
+        "description": "Eclat eternel personnalisable"
+      },
+      "gradient": {
+        "name": "Cuivre",
+        "description": "Rotation arcanique hypnotique"
+      },
+      "sparkle": {
+        "name": "Nuageux",
+        "description": "Scintillement de poussiere d'etoiles"
+      },
+      "electric": {
+        "name": "Paratonnerre",
+        "description": "Decharge plasma tonitruante"
+      },
+      "lifestream": {
+        "name": "Flux vital",
+        "description": "Energie etheree fluide"
+      },
+      "frost": {
+        "name": "Givre",
+        "description": "Majeste cristalline glaciale"
+      },
+      "fire": {
+        "name": "Lave",
+        "description": "Fureur infernale ardente"
+      },
+      "shadow": {
+        "name": "Portail du Nether",
+        "description": "Murmures du vide abyssal"
+      },
+      "rainbow": {
+        "name": "Legendaire!",
+        "description": "Aura legendaire prismatique"
+      }
+    },
+    "achievement": {
+      "livewire": {
+        "name": "Fil vivant",
+        "description": "Arcs electriques volatils"
+      },
+      "void": {
+        "name": "Vide cosmique",
+        "description": "Etendue infinie etoilee"
+      },
+      "toxic": {
+        "name": "Toxine",
+        "description": "Goutte acide caustique"
+      },
+      "holo": {
+        "name": "Hologramme",
+        "description": "Defaut numerique de realite"
+      },
+      "crystal": {
+        "name": "Cristallin",
+        "description": "Ensemble de fragments prismatiques"
+      }
+    }
+  },
+  "sound": {
+    "mobNames": {
+      "zombie": "Zombie",
+      "creeper": "Creeper",
+      "skeleton": "Squelette",
+      "spider": "Araignee",
+      "endermen": "Enderman",
+      "blaze": "Blaze",
+      "ghast": "Ghast",
+      "slime": "Slime",
+      "phantom": "Fantome",
+      "piglin": "Piglin",
+      "hoglin": "Hoglin",
+      "drowned": "Noye",
+      "pillager": "Pillard",
+      "evoker": "Invocateur",
+      "guardian": "Gardien",
+      "magmacube": "Cube de magma",
+      "witch": "Sorciere",
+      "enderdragon": "Dragon de l'End",
+      "wither": "Wither",
+      "warden": "Warden",
+      "elderguardian": "Gardien ancien",
+      "ravager": "Ravageur",
+      "wither_skeleton": "Squelette wither",
+      "creaking": "Grincement",
+      "cat": "Chat",
+      "chicken": "Poulet",
+      "cow": "Vache",
+      "pig": "Cochon",
+      "sheep": "Mouton",
+      "wolf": "Loup",
+      "dolphin": "Dauphin",
+      "fox": "Renard",
+      "panda": "Panda",
+      "parrot": "Perroquet",
+      "horse": "Cheval",
+      "turtle": "Tortue",
+      "rabbit": "Lapin",
+      "mooshroom": "Mooshroom",
+      "polarbear": "Ours polaire",
+      "llama": "Lama",
+      "bat": "Chauve-souris",
+      "bee": "Abeille",
+      "villager": "Villageois",
+      "irongolem": "Golem de fer",
+      "wandering_trader": "Marchand ambulant",
+      "strider": "Strider"
+    }
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "app": {
+    "micOff": "Mikrofono malaktiva",
+    "player1": "Ludanto 1",
+    "player2": "Ludanto 2",
+    "player3": "Ludanto 3"
+  },
+  "menus": {
+    "achievements": "Atingoj",
+    "totalLevel": "Totala nivelo:",
+    "badges": "Insignoj:",
+    "achievementsLabel": "Atingoj:",
+    "skillBadgesSection": "Sekcio de lertaj insignoj",
+    "compactBadgeRow": "Kompakta vico de insignoj",
+    "specialAchievements": "Specialaj atingoj",
+    "legendary": "LEGENDARIA!",
+    "lvlPrefix": "Niv",
+    "lvl180Plus": "Niv 180+"
+  },
+  "settings": {
+    "title": "Agordoj",
+    "selectFile": "Elekti profilon",
+    "audioConfiguration": "Sono-agordo",
+    "musicVolume": "Muzika volumeno",
+    "sfxVolume": "Efekta volumeno",
+    "language": "Lingvo",
+    "languageDescription": "Elektu la interfacan lingvon",
+    "languages": {
+      "en": "English",
+      "es": "Espanol",
+      "fr": "Francais",
+      "eo": "Esperanto"
+    },
+    "percent": "%",
+    "dangerZone": "Dangxera zono",
+    "deleteProgress": "FORIGI PROGRESOJN DE PROFILO"
+  },
+  "modals": {
+    "reset": {
+      "title": "Forigi progreson?",
+      "message": "Chu vi certe volas forigi la tutan progreson de tiu profilo?",
+      "warning": "Tiu ago estas nereigebla!",
+      "instructionPrefix": "Tajpu",
+      "instructionSuffix": "por konfirmi:",
+      "error": "Bonvolu tajpi DELETE por konfirmi.",
+      "cancel": "Nuligi",
+      "delete": "Forigi"
+    },
+    "bugReport": {
+      "title": "Chu vi trovis cimon?",
+      "sympathy": "Ho... Tio bedaurindas..."
+    },
+    "parentalVerification": {
+      "title": "Kio estas tio?",
+      "submitButton": "Sendi",
+      "errorMessage": "Malghusta respondo. Provu denove!"
+    }
+  },
+  "profile": {
+    "parent": "Gepatro",
+    "parentLabel": "Gepatro?",
+    "prefix": "P",
+    "lvAbbrev": "NIV.",
+    "skillProficiency": "Lerta kompetento"
+  },
+  "skills": {
+    "colors": {
+      "pink": "Rozkolora",
+      "cyan": "Cejana",
+      "gold": "Ora",
+      "brown": "Bruna",
+      "blue": "Blua",
+      "red": "Rugha",
+      "green": "Verda",
+      "black": "Nigra"
+    },
+    "reading": {
+      "name": "Legado",
+      "fantasyName": "Sorcha tablo",
+      "actionName": "Sorchi!",
+      "taskDescription": "Diru la antikvajn vortojn por direkti sorchojn kaj venki viajn malamikojn!",
+      "boss": "Endera drako"
+    },
+    "math": {
+      "name": "Matematiko",
+      "fantasyName": "Redstone",
+      "actionName": "Kalkuli!",
+      "taskDescription": "Aktivigu viajn redstone-cirkvitojn por ekigi kaptilojn kaj superruzi malamikajn mobojn!",
+      "boss": "La Wither"
+    },
+    "writing": {
+      "name": "Skribado",
+      "fantasyName": "Kreotablo",
+      "actionName": "Krei!",
+      "taskDescription": "Literumu la recepton por forgi legendajn armilojn kaj kirasojn!",
+      "boss": "La Warden"
+    },
+    "cleaning": {
+      "name": "Purigado",
+      "fantasyName": "Kest-administrado",
+      "actionName": "Ordigi!",
+      "taskDescription": "Ordigu vian predon kaj pretigu vian inventaron por la venontaj aventuroj!",
+      "boss": "Endera kesto"
+    },
+    "memory": {
+      "name": "Memoro",
+      "fantasyName": "Parigi kaj elkovi",
+      "actionName": "Parigi!",
+      "taskDescription": "Trovu la kongruajn parojn por elkovi rarajn kreitajhojn por via bieno!",
+      "boss": "Aksolotla maskoto"
+    },
+    "patterns": {
+      "name": "Shablonoj",
+      "fantasyName": "Logika konstruado",
+      "actionName": "Solvi!",
+      "taskDescription": "Malkodigu la sekvencon por malshlosi antikvajn mekanismojn kaj kasitajn trezorojn!",
+      "boss": "Fera golemo"
+    }
+  },
+  "effects": {
+    "border": {
+      "solid": {
+        "name": "Defaulata",
+        "description": "Eterna ora brilo"
+      },
+      "solidPicker": {
+        "name": "Defaulata",
+        "description": "Agordebla eterna brilo"
+      },
+      "gradient": {
+        "name": "Kupro",
+        "description": "Hipnota arkana rotacio"
+      },
+      "sparkle": {
+        "name": "Nubeca",
+        "description": "Ciela stelpolva brileto"
+      },
+      "electric": {
+        "name": "Fulmkondukilo",
+        "description": "Tondra plasma ondado"
+      },
+      "lifestream": {
+        "name": "Vivofluo",
+        "description": "Fluanta etera energio"
+      },
+      "frost": {
+        "name": "Prujno",
+        "description": "Glacia kristala majesto"
+      },
+      "fire": {
+        "name": "Lavo",
+        "description": "Infera flamanta furiozo"
+      },
+      "shadow": {
+        "name": "Nethra portalo",
+        "description": "Abismaj vakuaj flustroj"
+      },
+      "rainbow": {
+        "name": "Legenda!",
+        "description": "Prisma legenda auro"
+      }
+    },
+    "achievement": {
+      "livewire": {
+        "name": "Viva drato",
+        "description": "Volatilaj elektraj arkoj"
+      },
+      "void": {
+        "name": "Kosma vakuo",
+        "description": "Senfina stel-lumigita vastajho"
+      },
+      "toxic": {
+        "name": "Toksino",
+        "description": "Koroda acida guto"
+      },
+      "holo": {
+        "name": "Hologramo",
+        "description": "Cifereca reala glitcho"
+      },
+      "crystal": {
+        "name": "Kristala",
+        "description": "Prisma fragmenta aro"
+      }
+    }
+  },
+  "sound": {
+    "mobNames": {
+      "zombie": "Zombio",
+      "creeper": "Creeper",
+      "skeleton": "Skeleto",
+      "spider": "Araneo",
+      "endermen": "Enderman",
+      "blaze": "Blaze",
+      "ghast": "Ghast",
+      "slime": "Slimo",
+      "phantom": "Fantomo",
+      "piglin": "Piglin",
+      "hoglin": "Hoglin",
+      "drowned": "Droninto",
+      "pillager": "Rabisto",
+      "evoker": "Elvokisto",
+      "guardian": "Gardanto",
+      "magmacube": "Magma-kubo",
+      "witch": "Sorchistino",
+      "enderdragon": "Endera drako",
+      "wither": "Wither",
+      "warden": "Gardisto",
+      "elderguardian": "Maljuna gardanto",
+      "ravager": "Detruanto",
+      "wither_skeleton": "Wither-skeleto",
+      "creaking": "Knarante",
+      "cat": "Kato",
+      "chicken": "Kokino",
+      "cow": "Bovo",
+      "pig": "Porko",
+      "sheep": "Shafo",
+      "wolf": "Lupo",
+      "dolphin": "Delfeno",
+      "fox": "Vulpo",
+      "panda": "Pando",
+      "parrot": "Papago",
+      "horse": "Chevalo",
+      "turtle": "Testudo",
+      "rabbit": "Kuniklo",
+      "mooshroom": "Mooshroom",
+      "polarbear": "Polusa urso",
+      "llama": "Lamo",
+      "bat": "Vesperto",
+      "bee": "Abelo",
+      "villager": "Vilagano",
+      "irongolem": "Fera golemo",
+      "wandering_trader": "Vaganta komercisto",
+      "strider": "Strider"
+    }
+  }
+}

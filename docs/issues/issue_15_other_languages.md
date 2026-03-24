@@ -64,8 +64,8 @@
 
 ## 8. Open Questions
 1. Resolved: locales in scope for this branch are French (`fr`) and Esperanto (`eo`).
-2. Do we require full translation coverage at first merge, or is staged rollout with fallback allowed?
-3. Should locale labels in selector be endonym-only (e.g., `Français`) or include bilingual labels (e.g., `Français (French)`)?
+2. Resolved: full translation coverage is required at first merge.
+3. Resolved: locale labels in selector are endonym-only.
 
 ## 9. Recommendation
 - Preferred fix: combine Option 1 + Option 2, then add Option 3 as regression hardening.
@@ -75,3 +75,22 @@
 - Add `fr` and `eo` entries in `LOCALE_OPTIONS`.
 - Add parity-check test utility and CI integration.
 - Update docs with onboarding checklist and acceptance criteria.
+
+## 10. Implementation Results
+- Completed: added `src/i18n/locales/fr.json` with full key parity.
+- Completed: added `src/i18n/locales/eo.json` with full key parity.
+- Completed: registered `fr` and `eo` in `src/i18n/index.js` resources.
+- Completed: added `fr` and `eo` in `src/constants/locales.js` for settings selector.
+- Completed: updated locale label keys to include `fr` and `eo` in `en.json` and `es.json`.
+- Completed: extended unit language switch coverage in `src/components/drawers/__tests__/SettingsDrawer.test.jsx`.
+- Completed: added locale parity guard test in `src/i18n/__tests__/localeParity.test.js`.
+- Completed: extended e2e switch/persistence coverage in `e2e/text-regression.spec.ts`.
+
+## 11. Validation Evidence
+1. Unit tests passed:
+- `npm run test:unit -- src/components/drawers/__tests__/SettingsDrawer.test.jsx src/i18n/__tests__/localeParity.test.js`
+2. E2E test passed:
+- `npm run test:e2e -- e2e/text-regression.spec.ts`
+3. Notes:
+- E2E run initially failed due permission errors in `test-results/` and `dist/`; resolved with:
+- `sudo chown -R "$(id -un):$(id -gn)" test-results dist`
