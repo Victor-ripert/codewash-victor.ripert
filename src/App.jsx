@@ -54,9 +54,15 @@ const App = () => {
         2: t('app.player2'),
         3: t('app.player3')
     };
-    const [currentProfile, setCurrentProfile] = useState(() => localStorage.getItem('currentProfile_v1') ? parseInt(localStorage.getItem('currentProfile_v1')) : 1);
-    const [profileNames, setProfileNames] = useState(() => localStorage.getItem('heroProfileNames_v1') ? JSON.parse(localStorage.getItem('heroProfileNames_v1')) : defaultProfileNames);
-    const [parentStatus, setParentStatus] = useState(() => localStorage.getItem('heroParentStatus_v1') ? JSON.parse(localStorage.getItem('heroParentStatus_v1')) : { 1: false, 2: false, 3: false });
+    const [currentProfile, setCurrentProfile] = useState(() => localStorage.getItem('currentProfile_v1') ? parseInt(localStorage.getItem('currentProfile_v1'), 10) : 1);
+    const [profileNames, setProfileNames] = useState(() => {
+        try { return JSON.parse(localStorage.getItem('heroProfileNames_v1')) || defaultProfileNames; }
+        catch { return defaultProfileNames; }
+    });
+    const [parentStatus, setParentStatus] = useState(() => {
+        try { return JSON.parse(localStorage.getItem('heroParentStatus_v1')) || { 1: false, 2: false, 3: false }; }
+        catch { return { 1: false, 2: false, 3: false }; }
+    });
     const [playerHealth, setPlayerHealth] = useState(10);
     
     const getStorageKey = (profileId) => `heroSkills_v23_p${profileId}`;
