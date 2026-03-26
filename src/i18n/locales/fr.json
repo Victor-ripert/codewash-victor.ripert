@@ -48,7 +48,28 @@
     },
     "bugReport": {
       "title": "Vous avez trouve un bug ?",
-      "sympathy": "Oups... C'est embetant..."
+      "sympathy": "Oups... C'est embetant...",
+      "fields": {
+        "summary": "Résumé",
+        "detailedSteps": "Étapes pour reproduire",
+        "expectedResult": "Résultat attendu",
+        "actualResult": "Résultat actuel",
+        "attachments": "Pièces jointes (Max 3 fichiers, 5Mo chacun)"
+      },
+      "actions": {
+        "cancel": "Annuler",
+        "submit": "Envoyer le rapport",
+        "submitting": "Envoi en cours..."
+      },
+      "errors": {
+        "tooManyFiles": "Vous ne pouvez uploader que 3 fichiers maximum.",
+        "fileTooLarge": "Un ou plusieurs fichiers dépassent la limite de 5Mo.",
+        "networkError": "Erreur réseau. Veuillez réessayer plus tard.",
+        "general": "Échec de l'envoi du rapport. Veuillez vérifier vos données."
+      },
+      "success": {
+        "message": "Rapport de bug envoyé avec succès ! ID de référence: {{reportId}}"
+      }
     },
     "parentalVerification": {
       "title": "Qu'est-ce que c'est ?",

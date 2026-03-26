@@ -1,0 +1,22 @@
+[
+  {
+    "id": "e57994fc-af15-458b-89a8-f7ab37b20ce5",
+    "timestamp": "2026-03-26T13:34:19.860Z",
+    "summary": "Test Bug",
+    "reproductionSteps": "1. do this",
+    "expectedResult": "",
+    "actualResult": "",
+    "attachments": []
+  },
+  {
+    "id": "e425f4a4-f8b2-4ab5-b8e9-bb0b1e46eb0f",
+    "timestamp": "2026-03-26T13:39:19.391Z",
+    "summary": "J'ai trouver un bug",
+    "reproductionSteps": "1) comme ça\r\n2) comme ceci\r\n3) voila",
+    "expectedResult": "j'aurai du avoir ça",
+    "actualResult": "mais j'ai eu ça",
+    "attachments": [
+      "report-1774532359380-360278442-Screenshot 2026-03-25 at 16-16-02 eliott-rpg-game.png"
+    ]
+  }
+]

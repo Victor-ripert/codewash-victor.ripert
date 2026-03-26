@@ -48,7 +48,28 @@
     },
     "bugReport": {
       "title": "Chu vi trovis cimon?",
-      "sympathy": "Ho... Tio bedaurindas..."
+      "sympathy": "Ho... Tio bedaurindas...",
+      "fields": {
+        "summary": "Resumo",
+        "detailedSteps": "Pashoj por reprodukti",
+        "expectedResult": "Atendita rezulto",
+        "actualResult": "Fakta rezulto",
+        "attachments": "Aldonajhoj (Maks 3 dosieroj, po 5MB)"
+      },
+      "actions": {
+        "cancel": "Nuligi",
+        "submit": "Sendi raporton",
+        "submitting": "Sendante..."
+      },
+      "errors": {
+        "tooManyFiles": "Vi povas alshuti maksimume 3 dosierojn.",
+        "fileTooLarge": "Unu au pluraj dosieroj superas la 5MB limon.",
+        "networkError": "Reteraro. Bonvolu reprovi poste.",
+        "general": "Malsukcesis sendi raporton. Bonvolu kontroli viajn datumojn."
+      },
+      "success": {
+        "message": "Cimraporto sendita sukcese! Referenca ID: {{reportId}}"
+      }
     },
     "parentalVerification": {
       "title": "Kio estas tio?",

@@ -48,7 +48,28 @@
     },
     "bugReport": {
       "title": "Discovered a bug?",
-      "sympathy": "Whoa... That sucks..."
+      "sympathy": "Whoa... That sucks...",
+      "fields": {
+        "summary": "Summary",
+        "detailedSteps": "Steps to Reproduce",
+        "expectedResult": "Expected Result",
+        "actualResult": "Actual Result",
+        "attachments": "Attachments (Max 3 files, 5MB each)"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "submit": "Submit Report",
+        "submitting": "Submitting..."
+      },
+      "errors": {
+        "tooManyFiles": "You can only upload a maximum of 3 files.",
+        "fileTooLarge": "One or more files exceed the 5MB limit.",
+        "networkError": "Network error. Please try again later.",
+        "general": "Failed to submit report. Please check your data."
+      },
+      "success": {
+        "message": "Bug report submitted successfully! Reference ID: {{reportId}}"
+      }
     },
     "parentalVerification": {
       "title": "What is this?",

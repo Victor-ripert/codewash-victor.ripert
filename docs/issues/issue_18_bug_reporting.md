@@ -72,16 +72,20 @@
 - Network/API failures, oversized files, invalid file type, and destination outage must show actionable user errors and preserve logs.
 
 ## 8. Open Questions
-1. What is the primary destination in this project: issue tracker, email, webhook, or hybrid?
-2. What are maximum file size and attachment count limits?
-3. Should uploaded game files/logs be retained with TTL and redaction policy for sensitive data?
-4. Is bug reporting anonymous, authenticated, or profile-linked?
+1. Resolved: primary destination is a locally hosted minimal Express backend constructed for this purpose since no backend previously existed. Bug reports are saved locally to `backend/reports.json` and attached files to `backend/uploads/`.
+2. Resolved: limits are max 3 files, max 5 MB each.
+3. Resolved: No strict configuration for TTL or redaction policy.
+4. Resolved: Bug reporting is fully anonymous.
 
 ## 9. Recommendation
-- Preferred fix: Option 1 + Option 2 + Option 3 together (end-to-end pipeline).
-- Why: this provides a complete and testable feature rather than a UI-only form.
-- Follow-up tasks:
-- Define API contract and attachment policy.
-- Implement ingestion endpoint + storage + dispatcher.
-- Wire modal/button to submit multipart reports.
-- Add report receipt UI and monitoring dashboard/logs.
+- Implementation: Custom minimal Express backend running on `http://localhost:3001/api/reports` with local file storage.
+- Frontend matches file size and quantity logic implicitly via Javascript. 
+
+## 10. Implementation Results
+- Completed: Built `backend/server.js` accepting multipart form data via `multer`.
+- Completed: Modifed `BugReportModal.jsx` into a fully functioning submittal component mapped to `src/utils/bugReportService.js`.
+- Completed: Handled max limits of 5MB and 3 files max cleanly.
+- Completed: Ensured localized translation tags dynamically cover error feedback to the user limit constraints across 4 locale matrices.
+
+## 11. Notes
+- The simple backend operates locally unless deployed. To run it locally alongside vite, a simple `npm run start:backend` handles runtime ingestion concurrently.
