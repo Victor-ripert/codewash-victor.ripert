@@ -1,3 +1,6 @@
+/* eslint-env node */
+/* global require, process, __dirname */
+
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -70,7 +73,8 @@ app.post('/api/reports', upload.array('attachments', 3), (req, res) => {
   }
 });
 
-app.use((err, req, res, next) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, _next) => {
   if (err instanceof multer.MulterError) {
     if (err.code === 'LIMIT_FILE_SIZE') {
       return res.status(400).json({ success: false, message: 'File too large. Maximum size is 5MB.' });
