@@ -117,6 +117,9 @@
       "boss": "Fera golemo"
     }
   },
+  "phantom": {
+    "levelUp": "+1 Nivelo!"
+  },
   "effects": {
     "border": {
       "solid": {

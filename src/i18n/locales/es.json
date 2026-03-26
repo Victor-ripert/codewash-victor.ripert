@@ -117,6 +117,9 @@
       "boss": "Golem de Hierro"
     }
   },
+  "phantom": {
+    "levelUp": "+1 Nivel!"
+  },
   "effects": {
     "border": {
       "solid": {

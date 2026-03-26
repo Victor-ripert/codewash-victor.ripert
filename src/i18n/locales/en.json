@@ -117,6 +117,9 @@
       "boss": "Iron Golem"
     }
   },
+  "phantom": {
+    "levelUp": "+1 Level!"
+  },
   "effects": {
     "border": {
       "solid": {
