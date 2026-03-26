@@ -9,6 +9,16 @@ import { playClick, getSfxVolume } from '../../utils/soundManager';
 import { calculateXPToLevel } from '../../utils/gameUtils';
 import { AURA_ADJECTIVES } from '../../utils/mobDisplayUtils';
 
+// pa mezclar las cartas bien, nada de sort random cutre
+const fisherYatesShuffle = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
+
 const PRESTIGE_LEVEL_THRESHOLD = 20;
 
 // Voice recognition constants
@@ -242,10 +252,10 @@ const SkillCard = ({ config, data, themeData, isCenter, isBattling, mobName, mob
             // Only regenerate cards when entering battle if no session started yet
             memorySessionStartedRef.current = true;
             const allMobKeys = Object.keys(FRIENDLY_MOBS);
-            const shuffledMobs = [...allMobKeys].sort(() => Math.random() - 0.5);
+            const shuffledMobs = fisherYatesShuffle(allMobKeys);
             const selectedMobs = shuffledMobs.slice(0, memoryPairs);
             // Create pairs from the selected mobs
-            let deck = [...selectedMobs, ...selectedMobs].sort(() => Math.random() - 0.5);
+            let deck = fisherYatesShuffle([...selectedMobs, ...selectedMobs]);
             setMemoryCards(deck.map((mobKey, i) => ({ id: i, color: mobKey, img: FRIENDLY_MOBS[mobKey] })));
             setFlippedIndices([]); setMatchedPairs([]); setIsProcessingMatch(false); setMismatchShake(false);
         } else if (!isBattling && config.id === 'memory') {
