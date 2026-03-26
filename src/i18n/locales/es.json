@@ -48,7 +48,28 @@
     },
     "bugReport": {
       "title": "¿Descubriste un bug?",
-      "sympathy": "Uf... Eso es malo..."
+      "sympathy": "Uf... Eso es malo...",
+      "fields": {
+        "summary": "Resumen",
+        "detailedSteps": "Pasos para reproducir",
+        "expectedResult": "Resultado esperado",
+        "actualResult": "Resultado real",
+        "attachments": "Archivos adjuntos (Máx 3 archivos, 5MB cada uno)"
+      },
+      "actions": {
+        "cancel": "Cancelar",
+        "submit": "Enviar reporte",
+        "submitting": "Enviando..."
+      },
+      "errors": {
+        "tooManyFiles": "Solo puedes subir un máximo de 3 archivos.",
+        "fileTooLarge": "Uno o más archivos superan el límite de 5MB.",
+        "networkError": "Error de red. Inténtalo de nuevo más tarde.",
+        "general": "Error al enviar el reporte. Por favor revisa tus datos."
+      },
+      "success": {
+        "message": "¡Reporte enviado con éxito! ID de referencia: {{reportId}}"
+      }
     },
     "parentalVerification": {
       "title": "¿Qué es esto?",
