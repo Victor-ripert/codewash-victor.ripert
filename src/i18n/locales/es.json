@@ -117,6 +117,17 @@
       "boss": "Golem de Hierro"
     }
   },
+  "cosmetics": {
+    "title": "Temas y Cosmeticos",
+    "themeSelect": "Seleccion de Tema",
+    "borderEffects": "Efectos de Borde",
+    "active": "ACTIVO",
+    "color": "Color",
+    "badgeRequired": "Se requiere insignia {{badge}}",
+    "earnBadge": "Gana la insignia {{badge}} para desbloquear este efecto",
+    "locked": "Bloqueado",
+    "unlocked": "Desbloqueado"
+  },
   "effects": {
     "border": {
       "solid": {

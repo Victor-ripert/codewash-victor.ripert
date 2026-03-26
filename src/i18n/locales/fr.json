@@ -117,6 +117,17 @@
       "boss": "Golem de fer"
     }
   },
+  "cosmetics": {
+    "title": "Themes et Cosmetiques",
+    "themeSelect": "Selection du theme",
+    "borderEffects": "Effets de bordure",
+    "active": "ACTIF",
+    "color": "Couleur",
+    "badgeRequired": "Badge {{badge}} requis",
+    "earnBadge": "Obtenez le badge {{badge}} pour debloquer cet effet",
+    "locked": "Verrouille",
+    "unlocked": "Deverrouille"
+  },
   "effects": {
     "border": {
       "solid": {

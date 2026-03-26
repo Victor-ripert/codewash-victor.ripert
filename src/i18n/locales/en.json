@@ -117,6 +117,17 @@
       "boss": "Iron Golem"
     }
   },
+  "cosmetics": {
+    "title": "Themes & Cosmetics",
+    "themeSelect": "Theme Select",
+    "borderEffects": "Border Effects",
+    "active": "ACTIVE",
+    "color": "Color",
+    "badgeRequired": "{{badge}} Badge Required",
+    "earnBadge": "Earn the {{badge}} badge to unlock this effect",
+    "locked": "Locked",
+    "unlocked": "Unlocked"
+  },
   "effects": {
     "border": {
       "solid": {

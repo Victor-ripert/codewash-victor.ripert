@@ -117,6 +117,17 @@
       "boss": "Fera golemo"
     }
   },
+  "cosmetics": {
+    "title": "Temoj kaj Kosmetikajhoj",
+    "themeSelect": "Elekto de temo",
+    "borderEffects": "Borderaj efektoj",
+    "active": "AKTIVA",
+    "color": "Koloro",
+    "badgeRequired": "Insigno {{badge}} bezonata",
+    "earnBadge": "Gajnu la insignon {{badge}} por malshlosi tiun efekton",
+    "locked": "Shlositaj",
+    "unlocked": "Malshlositaj"
+  },
   "effects": {
     "border": {
       "solid": {
