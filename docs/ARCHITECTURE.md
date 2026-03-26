@@ -15,7 +15,7 @@ App.jsx (all state + business logic)
 ├── CosmeticsDrawer    ← theme + border selection
 ├── BugReportModal     ← bug reporting (placeholder)
 ├── ResetModal         ← game reset confirmation
-└── PhantomEvent       ← random special events
+└── PhantomEvent       ← random special events (receives currentProfile for per-profile cooldown)
 ```
 
 ## State Persistence

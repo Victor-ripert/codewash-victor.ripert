@@ -2,23 +2,9 @@
 
 ## Bugs
 
-### Spy theme uses wrong background
-- **File**: `src/constants/gameData.jsx`, line 205
-- **Issue**: Spy theme background points to `minecraft.png` instead of `spy.png`
-- **Impact**: Spy theme shows the Minecraft background instead of its own
-
-### Missing theme assets
-- **Files**: Referenced in `src/constants/gameData.jsx` (THEME_CONFIG)
-- **Missing assets**:
-  - `assets/themes/kpop_memorycard.jpg` — K-Pop memory card back
-  - `assets/themes/pokemon_memorycard.jpg` — Pokemon memory card back
-  - `assets/themes/spy_memorycard.jpg` — Spy memory card back
-  - `assets/themes/spy_logo.png` — Spy theme logo
-- **Impact**: Broken images when using non-Minecraft themes in Memory minigame
-
 ### Non-Minecraft themes have empty mob lists
-- **File**: `src/constants/gameData.jsx`, lines 190, 199, 208
-- **Issue**: K-Pop, Pokemon, and Spy themes have `mobs: {}` (empty objects)
+- **File**: `src/constants/gameData.jsx`, lines 190, 199, 208, 218, 228
+- **Issue**: K-Pop, Pokemon, Spy, Sci-Fi, and Fantasy themes have `mobs: {}` (empty objects)
 - **Impact**: All themes fall back to default Minecraft mobs — themes are cosmetic only
 
 ## Code Smells
@@ -31,6 +17,18 @@
 - `App.jsx` (~1500 lines) — all game state, business logic, and UI in one file
 - `SkillCard.jsx` (~2000 lines) — all 6 minigames in one component
 
-## Unused Assets
-- `public/assets/themes/Scifi.png` — Sci-Fi background, not used by any theme
-- `public/assets/themes/fantasy.png` — Fantasy background, not used by any theme
+## Recently Fixed
+
+| Issue | PR | Description |
+|---|---|---|
+| #21 | #24 | CosmeticsDrawer hardcoded English strings — now uses i18n |
+| #22 | #25 | PhantomEvent cooldown shared across profiles — now per-profile |
+| #23 | #26 | Unprotected JSON.parse in App.jsx — now wrapped in try-catch |
+| #27 | #30 | PhantomEvent hardcoded strings — now translated |
+| #28 | #31 | SkillCard biased shuffle — replaced with Fisher-Yates |
+| #29 | #32 | Debug console.log in production — removed |
+
+### Previously Fixed (commit `a2ddc97`)
+- Spy theme wrong background (`minecraft.png` → `spy.png`)
+- Missing theme assets (card backs now fall back to `memorycard.jpg`)
+- Spy theme logo (`spy_logo.png` → `spy.png`)

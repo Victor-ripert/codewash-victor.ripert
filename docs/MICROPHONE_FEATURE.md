@@ -88,15 +88,9 @@ Processes recognized speech:
 ## Debugging
 
 ### Console Logging
-All speech recognition events are logged to the browser console with the `[Speech Recognition]` or `[Mic Toggle]` prefix:
+Debug `console.log` statements were removed from production code (see issue #29). Only `console.warn` and `console.error` remain for actual failure reporting (e.g. permission denied, recognition errors).
 
-```
-[Speech Recognition] Initializing for skill: reading
-[Speech Recognition] Start command issued
-[Speech Recognition] Started listening
-[Speech Recognition] Recognized text: HELLO
-[Speech Recognition] Correct answer!
-```
+To debug speech recognition locally, add temporary `console.log` calls or use the browser's Web Speech API debugging tools.
 
 ### Common Issues and Solutions
 
