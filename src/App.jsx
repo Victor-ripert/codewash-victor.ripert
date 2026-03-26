@@ -1476,8 +1476,9 @@ const App = () => {
             )}
             
             {/* Phantom Fly-By Bonus Event */}
-            <PhantomEvent 
-                battlingSkillId={battlingSkillId} 
+            <PhantomEvent
+                battlingSkillId={battlingSkillId}
+                currentProfile={currentProfile}
                 onAwardLevel={handlePhantomLevelAward}
                 onPhantomCaught={() => {
                     setStats(prevStats => {

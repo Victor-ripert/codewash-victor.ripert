@@ -2,13 +2,14 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { HOSTILE_MOBS } from '../constants/gameData';
 import { playSuccessfulHit } from '../utils/soundManager';
 
-const PHANTOM_COOLDOWN_KEY = 'phantomEvent_lastSpawn_v1';
 const MIN_COOLDOWN_MS = 5 * 60 * 1000; // 5 minutes
 const MAX_COOLDOWN_MS = 10 * 60 * 1000; // 10 minutes
 const FLIGHT_DURATION_MS = 8000; // 8 seconds to cross the screen (slow enough for a child to click)
 const PHANTOM_OFFSCREEN_LEFT = '-120px'; // Start position offscreen on the left
 
-const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
+const getPhantomCooldownKey = (profileId) => `phantomEvent_lastSpawn_v1_p${profileId}`;
+
+const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught, currentProfile = 1 }) => {
     const [isActive, setIsActive] = useState(false);
     const [fromLeft, setFromLeft] = useState(true);
     const [clicked, setClicked] = useState(false);
@@ -18,7 +19,7 @@ const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
 
     // Schedule the next phantom spawn
     const scheduleNextSpawn = useCallback(() => {
-        const lastSpawn = parseInt(localStorage.getItem(PHANTOM_COOLDOWN_KEY) || '0', 10);
+        const lastSpawn = parseInt(localStorage.getItem(getPhantomCooldownKey(currentProfile)) || '0', 10);
         const now = Date.now();
         const timeSinceLastSpawn = now - lastSpawn;
         
@@ -41,7 +42,7 @@ const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
                 spawnPhantomRef.current();
             }
         }, delay);
-    }, []);
+    }, [currentProfile]);
 
     // Spawn the phantom
     const spawnPhantom = useCallback(() => {
@@ -52,7 +53,7 @@ const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
         setIsActive(true);
         
         // Record spawn time
-        localStorage.setItem(PHANTOM_COOLDOWN_KEY, Date.now().toString());
+        localStorage.setItem(getPhantomCooldownKey(currentProfile), Date.now().toString());
 
         // Set timeout for when phantom reaches the other side
         if (flightTimeoutRef.current) {
@@ -62,7 +63,7 @@ const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
             setIsActive(false);
             scheduleNextSpawn();
         }, FLIGHT_DURATION_MS);
-    }, [scheduleNextSpawn]);
+    }, [scheduleNextSpawn, currentProfile]);
 
     // Keep ref updated
     useEffect(() => {
