@@ -199,4 +199,4 @@ const BugReportModal = ({ isOpen, onClose }) => {
     );
 };
 
-export default BugReportModal;
+export default React.memo(BugReportModal);

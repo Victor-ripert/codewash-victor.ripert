@@ -106,4 +106,4 @@ const ResetModal = ({ isOpen, onClose, onConfirm }) => {
     );
 };
 
-export default ResetModal;
+export default React.memo(ResetModal);

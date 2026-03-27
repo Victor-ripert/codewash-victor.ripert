@@ -46,7 +46,22 @@
 3. **UX Testing**: Verify menu animations feel significantly tighter and don't drop frames on mid-to-lower-range hardware.
 4. **Metrics Comparison**: Compare post-implementation metrics against the original baseline to objectively prove the UX performance gains.
 
-## 8. Open Questions
-1. How should the "percentage" be calculated? Should it trace actual network/disk file bytes loaded, or rely on a simulated/mock progress based on component mounting stages?
-2. What are the exact target metrics the team considers "success" (e.g., < 1s Load Time, solid 60 FPS)?
-3. Do we need an in-game developer overlay for monitoring FPS and load times continuously during this branch's implementation?
+## 8. Decisions & Answers to Open Questions
+
+**Q1: How should the "percentage" be calculated?**
+- **Answer**: Loading progress will be simulated deterministically through a fast counter hook that increments from 0-100% within ~1 second, completing before heavy game nodes mount. This avoids the complexity of tracking actual byte-level file I/O while providing immediate visual feedback to the user.
+
+**Q2: What are the exact target metrics the team considers "success"?**
+- **Answer**: 
+  - **Target Load Time**: ≤ 1 second from app launch to interactive main menu
+  - **Frame Rate**: Solid 60 FPS on mid-range hardware during menu interactions and animations
+  - **Loading Screen**: Must appear within milliseconds of app start
+
+**Q3: Do we need an in-game developer overlay for monitoring FPS and load times continuously?**
+- **Answer**: No. Instead, developers will rely on standalone performance auditing locally using React DevTools Profiler and browser DevTools metrics. This keeps the shipping build clean and avoids performance tax from monitoring code.
+
+**Implementation Approach**:
+1. Use `React.memo()` to memoize expensive menu components (MenuDrawer, SettingsDrawer, CosmeticsDrawer, BugReportModal)
+2. Wrap UI handlers in `useCallback` to maintain reference equality between renders
+3. Replace CPU-bound animations (margin, left/right positioning) with GPU-accelerated transforms
+4. Accelerate transition timings for a "punchier" feel (e.g., `duration-300` → `duration-150`)

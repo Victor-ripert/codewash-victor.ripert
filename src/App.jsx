@@ -58,6 +58,25 @@ const App = () => {
     const [profileNames, setProfileNames] = useState(() => localStorage.getItem('heroProfileNames_v1') ? JSON.parse(localStorage.getItem('heroProfileNames_v1')) : defaultProfileNames);
     const [parentStatus, setParentStatus] = useState(() => localStorage.getItem('heroParentStatus_v1') ? JSON.parse(localStorage.getItem('heroParentStatus_v1')) : { 1: false, 2: false, 3: false });
     const [playerHealth, setPlayerHealth] = useState(10);
+    const [isBooting, setIsBooting] = useState(true);
+    const [bootProgress, setBootProgress] = useState(0);
+    
+    useEffect(() => {
+        let interval;
+        if (isBooting) {
+            interval = setInterval(() => {
+                setBootProgress(p => {
+                    if (p >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => setIsBooting(false), 200);
+                        return 100;
+                    }
+                    return p + Math.floor(Math.random() * 10) + 5;
+                });
+            }, 50);
+        }
+        return () => clearInterval(interval);
+    }, [isBooting]);
     
     const getStorageKey = (profileId) => `heroSkills_v23_p${profileId}`;
     const loadSkills = (profileId) => {
@@ -1209,6 +1228,18 @@ const App = () => {
         
         return combatSkillAuras[skillConfig.id] || null;
     };
+
+    if (isBooting) {
+        return (
+            <div className={`min-h-screen relative flex flex-col items-center justify-center bg-gray-900 text-white font-[Minecraftia]`} style={{ backgroundImage: `url('/assets/themes/${currentThemeData.id}/bg.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <h1 className="text-4xl mb-8 pixel-text drop-shadow-lg text-yellow-400 text-center">Level Up</h1>
+                <div className="w-64 h-8 bg-gray-800 border-4 border-gray-700 rounded-sm relative">
+                    <div className="h-full bg-green-500 transition-all duration-100 ease-linear" style={{ width: `${Math.min(bootProgress, 100)}%` }} />
+                </div>
+                <p className="mt-4 text-sm text-gray-400">{bootProgress}% Loading...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen overflow-hidden relative flex flex-col bg-cover bg-center bg-no-repeat font-sans text-stone-100" style={containerStyle}>

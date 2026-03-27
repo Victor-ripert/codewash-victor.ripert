@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useTranslation } from 'react-i18next';
 import { Lock } from 'lucide-react';
 import SafeImage from '../ui/SafeImage';
@@ -39,7 +39,7 @@ const MenuDrawer = ({ isOpen, skills, stats }) => {
     
     return (
         <div 
-            className={`fixed h-full w-[75%] md:w-[60%] bg-[#1a1a1a]/95 backdrop-blur-md z-50 border-l-4 border-stone-600 shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`fixed h-full w-[75%] md:w-[60%] bg-[#1a1a1a]/95 backdrop-blur-md z-50 border-l-4 border-stone-600 shadow-2xl transition-transform duration-150 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
             style={{ top: 0, right: 0 }}
         >
             <div className="p-6 h-full flex flex-col">
@@ -91,7 +91,7 @@ const MenuDrawer = ({ isOpen, skills, stats }) => {
                                                         className="group relative"
                                                         title={`${tier.title} - Level ${tier.level}`}
                                                     >
-                                                        <div className={`w-11 h-11 border-2 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                                                        <div className={`w-11 h-11 border-2 rounded-lg flex items-center justify-center transition-all duration-150 ${
                                                             isUnlocked 
                                                                 ? 'border-yellow-500 bg-stone-800 shadow-md hover:scale-110' 
                                                                 : 'border-stone-600 bg-stone-900/50 opacity-50 grayscale'
@@ -116,7 +116,7 @@ const MenuDrawer = ({ isOpen, skills, stats }) => {
                                                     className="group relative"
                                                     title={t('menus.legendary')}
                                                 >
-                                                    <div className="w-11 h-11 border-2 rounded-lg flex items-center justify-center border-yellow-500 bg-gradient-to-br from-yellow-900 to-stone-800 shadow-lg relative hover:scale-110 transition-all duration-300">
+                                                    <div className="w-11 h-11 border-2 rounded-lg flex items-center justify-center border-yellow-500 bg-gradient-to-br from-yellow-900 to-stone-800 shadow-lg relative hover:scale-110 transition-all duration-150">
                                                         <SafeImage src={BASE_ASSETS.badges.Legendary} className="w-8 h-8 object-contain" />
                                                         {legendaryCount >= 2 && (
                                                             <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-600 border border-yellow-400 rounded-full flex items-center justify-center">
@@ -173,7 +173,7 @@ const MenuDrawer = ({ isOpen, skills, stats }) => {
                                     <div key={achievement.id} className="relative group">
                                         {/* Achievement Square */}
                                         <div 
-                                            className={`w-16 h-16 rounded-lg border-2 flex items-center justify-center transition-all duration-300 cursor-pointer ${
+                                            className={`w-16 h-16 rounded-lg border-2 flex items-center justify-center transition-all duration-150 cursor-pointer ${
                                                 unlocked
                                                     ? tierColor
                                                         ? 'hover:scale-110'
@@ -261,4 +261,4 @@ const MenuDrawer = ({ isOpen, skills, stats }) => {
     );
 };
 
-export default MenuDrawer;
+export default React.memo(MenuDrawer);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useTranslation } from 'react-i18next';
 import { Users, Music, Trash2, AlertTriangle, Languages } from 'lucide-react';
 import ProfileCard from '../profile/ProfileCard';
@@ -16,7 +16,7 @@ const SettingsDrawer = ({ isOpen, onReset, bgmVol, setBgmVol, sfxVol, setSfxVol,
     
     return (
     <div 
-        className={`fixed h-full w-[85%] md:w-[60%] bg-[#0f172a]/95 backdrop-blur-xl z-50 border-r-4 border-slate-700 shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed h-full w-[85%] md:w-[60%] bg-[#0f172a]/95 backdrop-blur-xl z-50 border-r-4 border-slate-700 shadow-2xl transition-transform duration-150 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
         style={{ top: 0, left: 0 }}
     >
         <div className="p-6 h-full flex flex-col text-slate-200 font-sans">
@@ -104,4 +104,4 @@ const SettingsDrawer = ({ isOpen, onReset, bgmVol, setBgmVol, sfxVol, setSfxVol,
     );
 };
 
-export default SettingsDrawer;
+export default React.memo(SettingsDrawer);

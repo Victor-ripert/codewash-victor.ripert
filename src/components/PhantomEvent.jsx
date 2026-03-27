@@ -118,11 +118,11 @@ const PhantomEvent = ({ battlingSkillId, onAwardLevel, onPhantomCaught }) => {
 
     return (
         <div
-            className="fixed top-4 z-[9999] cursor-pointer select-none"
+            className="fixed top-4 left-0 z-[9999] cursor-pointer select-none"
             style={{
-                left: fromLeft ? PHANTOM_OFFSCREEN_LEFT : 'calc(100vw)',
                 animation: `${fromLeft ? 'phantomFlyLeft' : 'phantomFlyRight'} ${FLIGHT_DURATION_MS}ms linear forwards`,
                 opacity: clicked ? 0 : 1,
+                willChange: 'transform',
                 transition: 'opacity 0.2s ease-out',
             }}
             onClick={handleClick}
