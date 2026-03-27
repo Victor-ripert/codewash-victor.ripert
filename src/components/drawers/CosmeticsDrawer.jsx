@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from "react";
 import { Sparkles, Flame, Snowflake, Zap, Skull, Star, Activity, Atom, Droplet, Grid3x3, Gem, Info } from 'lucide-react';
 import SafeImage from '../ui/SafeImage';
 import { THEMES_LIST } from '../../constants/gameData';
@@ -37,7 +37,7 @@ const CosmeticsDrawer = ({
     unlockedBorders,
     unlockedAchievements = [] // New prop for unlocked achievements
 }) => {
-    const [showColorPicker, setShowColorPicker] = useState(false);
+    const [showColorPicker, setShowColorPicker] = React.useState(false);
     
     const isBorderUnlocked = (badge) => {
         // Default (locked on yellow) is always unlocked
@@ -52,7 +52,7 @@ const CosmeticsDrawer = ({
 
     return (
         <div 
-            className={`fixed h-full w-[85%] md:w-[60%] bg-[#0f172a]/95 backdrop-blur-xl z-50 border-r-4 border-slate-700 shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+            className={`fixed h-full w-[85%] md:w-[60%] bg-[#0f172a]/95 backdrop-blur-xl z-50 border-r-4 border-slate-700 shadow-2xl transition-transform duration-150 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
             style={{ top: 0, left: 0 }}
         >
             <div className="p-6 h-full flex flex-col justify-start gap-6 overflow-y-auto scrollbar-hide text-slate-200 font-sans">
@@ -73,7 +73,7 @@ const CosmeticsDrawer = ({
                                 key={theme.id} 
                                 onClick={() => setActiveTheme(theme.id)} 
                                 disabled={activeTheme === theme.id} 
-                                className={`h-24 rounded-lg border-2 overflow-hidden relative transition-all duration-300 shadow-lg group ${
+                                className={`h-24 rounded-lg border-2 overflow-hidden relative transition-all duration-150 shadow-lg group ${
                                     activeTheme === theme.id 
                                         ? 'border-yellow-400 ring-2 ring-yellow-400/20 opacity-100 cursor-default' 
                                         : 'border-slate-600 hover:scale-105 hover:border-white opacity-60 hover:opacity-100'
@@ -128,7 +128,7 @@ const CosmeticsDrawer = ({
                                             }
                                         }}
                                         disabled={!unlocked}
-                                        className={`relative p-3 rounded-lg border-2 transition-all duration-300 w-full ${
+                                        className={`relative p-3 rounded-lg border-2 transition-all duration-150 w-full ${
                                             !unlocked 
                                                 ? 'bg-slate-800/50 border-slate-600 opacity-70 cursor-not-allowed' 
                                                 : isSelected
@@ -244,7 +244,7 @@ const CosmeticsDrawer = ({
                                             }
                                         }}
                                         disabled={!unlocked}
-                                        className={`relative p-3 rounded-lg border-2 transition-all duration-300 w-full ${
+                                        className={`relative p-3 rounded-lg border-2 transition-all duration-150 w-full ${
                                             !unlocked 
                                                 ? 'bg-slate-800/50 border-slate-600 opacity-70 cursor-not-allowed' 
                                                 : isSelected
@@ -319,4 +319,4 @@ const CosmeticsDrawer = ({
     );
 };
 
-export default CosmeticsDrawer;
+export default React.memo(CosmeticsDrawer);

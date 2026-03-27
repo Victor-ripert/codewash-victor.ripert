@@ -37,18 +37,18 @@
 /* Phantom fly-by event animations */
 @keyframes phantomFlyLeft {
   0% {
-    left: -120px;
+    transform: translateX(-120px);
   }
   100% {
-    left: 100vw;
+    transform: translateX(100vw);
   }
 }
 
 @keyframes phantomFlyRight {
   0% {
-    left: 100vw;
+    transform: translateX(100vw);
   }
   100% {
-    left: -120px;
+    transform: translateX(-120px);
   }
 }
